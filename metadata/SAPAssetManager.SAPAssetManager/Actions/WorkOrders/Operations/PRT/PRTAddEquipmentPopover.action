@@ -1,0 +1,9 @@
+{
+    "PopoverItems": [
+        {
+            "Title": "$(L,add_equipment)",
+            "OnPress": "/SAPAssetManager/Rules/WorkOrders/Operations/PRT/PRTEquipmentAddNav.js"
+        }
+    ],
+    "_Type": "Action.Type.PopoverMenu"
+}

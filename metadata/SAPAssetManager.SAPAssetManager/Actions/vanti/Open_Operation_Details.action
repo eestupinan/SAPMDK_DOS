@@ -1,0 +1,6 @@
+{
+	"ModalPage": false,
+	"ModalPageFullscreen": false,
+	"PageToOpen": "/SAPAssetManager/Pages/WorkOrders/Operations/WorkOrderOperationDetails.page",
+	"_Type": "Action.Type.Navigation"
+}

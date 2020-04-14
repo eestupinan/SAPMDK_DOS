@@ -1,0 +1,67 @@
+{
+	"ActionBar": {
+		"Items": [
+			{
+				"Icon": "res://sync",
+				"OnPress": "/SAPAssetManager/Actions/SyncInitializeProgressBannerMessage.action",
+				"Position": "right"
+			},
+			{
+				"Icon": "/SAPAssetManager/Rules/Common/Platform/FilterIcon.js",
+				"OnPress": "/SAPAssetManager/Actions/WorkOrders/WorkOrderFilter.action",
+				"Position": "right",
+				"Text": "$(L,filter)"
+			}
+		]
+	},
+	"Caption": "$(L,workorders)",
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"EmptySection": {
+						"Caption": "$(L,no_workorders_available)",
+						"FooterVisible": false
+					},
+					"Header": {
+						"UseTopPadding": false
+					},
+					"ObjectCell": {
+						"AccessoryType": "disclosureIndicator",
+						"Footnote": "/SAPAssetManager/Rules/WorkOrders/ListView/WorkOrdersListViewFooter.js",
+						"OnPress": "/SAPAssetManager/Rules/WorkOrders/WorkOrderDetailsNav.js",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{{#Property:WOPriority/#Property:PriorityDescription}}",
+						"Styles": {
+							"Title": "WorkOrderListViewTitle"
+						},
+						"Subhead": "{Direccion}",
+						"SubstatusText": "/SAPAssetManager/Rules/DateTime/DueDate.js",
+						"Title": "/SAPAssetManager/Rules/WorkOrders/ListView/WorkOrdersListViewTitle.js"
+					},
+					"Search": {
+						"Delay": 500,
+						"Enabled": "/SAPAssetManager/Rules/WorkOrders/WorkOrdersSearchEnabled.js",
+						"MinimumCharacterThreshold": 3,
+						"Placeholder": "$(L,search)"
+					},
+					"Target": {
+						"EntitySet": "MyWorkOrderHeaders",
+						"QueryOptions": "$expand=Address,WOPriority",
+						"Service": "/SAPAssetManager/Services/AssetManager.service"
+					},
+					"Visible": true,
+					"_Name": "WorkOrdersListSection",
+					"_Type": "Section.Type.ObjectTable"
+				}
+			],
+			"_Name": "SectionedTable",
+			"_Type": "Control.Type.SectionedTable"
+		}
+	],
+	"DataSubscriptions": "/SAPAssetManager/Rules/Common/DataSubscriptions.js",
+	"OnLoaded": "/SAPAssetManager/Rules/WorkOrders/ListView/WorkOrderListViewOnPageLoad.js",
+	"OnReturning": "/SAPAssetManager/Rules/WorkOrders/WorkOrderListViewCaption.js",
+	"_Name": "WorkOrdersListViewPage",
+	"_Type": "Page"
+}

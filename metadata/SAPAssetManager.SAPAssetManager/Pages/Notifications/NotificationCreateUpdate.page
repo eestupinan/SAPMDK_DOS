@@ -1,0 +1,181 @@
+{
+	"ActionBar": {
+		"Items": [
+			{
+				"Position": "right",
+				"SystemItem": "/SAPAssetManager/Rules/Common/ChangeSet/ChangeSetCreateUpdateDoneIcon.js",
+				"Text": "/SAPAssetManager/Rules/Common/ChangeSet/ChangeSetCreateUpdateButtonText.js",
+				"OnPress": "/SAPAssetManager/Actions/Notifications/CreateUpdate/NotificationCreateUpdateRequired.action"
+			},
+			{
+				"Position": "left",
+				"SystemItem": "Cancel",
+				"OnPress": "/SAPAssetManager/Rules/Notifications/ResetNotificationFlags.js"
+			}
+		]
+	},
+	"OnLoaded": "/SAPAssetManager/Rules/Notifications/CreateUpdate/NotificationCreateUpdateOnPageLoad.js",
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"Controls": [
+						{
+                            "Caption": "$(L,notification_description)",
+							"PlaceHolder": "$(L,notification_description)",
+							"Value": "{NotificationDescription}",
+							"IsAutoResizing": true,
+							"_Name": "NotificationDescription",
+							"_Type": "Control.Type.FormCell.Note"
+						},
+						{
+							"AllowMultipleSelection": false,
+							"Search": {
+								"Enabled": true,
+								"Delay": 500,
+								"MinimumCharacterThreshold": 3,
+								"Placeholder": "$(L,search)",
+								"BarcodeScanner": true
+							},
+							"Caption": "$(L,type)",
+							"Value": "/SAPAssetManager/Rules/Notifications/NotificationTypePkrDefault.js",
+							"PickerItems": {
+								"DisplayValue": "{{#Property:NotifType}} - {{#Property:Description}}",
+								"ReturnValue": "{NotifType}",
+								"Target": {
+									"EntitySet": "NotificationTypes",
+									"Service": "/SAPAssetManager/Services/AssetManager.service",
+									"QueryOptions":"$orderby=NotifType"
+								}
+							},
+							"OnValueChange": "/SAPAssetManager/Rules/Notifications/CreateUpdate/NotificationCreateUpdatePrioritySelector.js",
+							"_Name": "TypeLstPkr",
+							"_Type": "Control.Type.FormCell.ListPicker"
+						},
+						{
+							"Caption": "$(L,priority)",
+							"Value": "/SAPAssetManager/Rules/Notifications/NotificationPrioritySegDefault.js",
+							"Segments": {
+								"DisplayValue": "{PriorityDescription}",
+								"ReturnValue": "{Priority}",
+								"Target": {
+									"EntitySet": "Priorities",
+									"Service": "/SAPAssetManager/Services/AssetManager.service",
+									"QueryOptions": "$filter=PriorityType eq '{{#Property:PriorityType}}'&$orderby=Priority"
+								}
+							},
+							"_Name": "PrioritySeg",
+							"_Type": "Control.Type.FormCell.SegmentedControl"
+						},
+						{
+							"AllowMultipleSelection": false,
+							"Search": {
+								"Enabled": true,
+								"Delay": 500,
+								"MinimumCharacterThreshold": 3,
+								"Placeholder": "$(L,search)",
+								"BarcodeScanner": true
+							},
+							"Caption": "$(L,functional_location)",
+							"Value": "{HeaderFunctionLocation}",
+							"OnValueChange": "/SAPAssetManager/Rules/Notifications/CreateUpdate/NotificationCreateUpdatePickerItems.js",
+							"PickerItems": {
+								"DisplayValue": "{{#Property:FuncLocId}} - {{#Property:FuncLocDesc}}",
+								"ReturnValue": "{FuncLocIdIntern}",
+								"Target": {
+									"EntitySet": "MyFunctionalLocations",
+									"Service": "/SAPAssetManager/Services/AssetManager.service",
+									"QueryOptions": "/SAPAssetManager/Rules/Notifications/NotificationFLOCFilter.js"
+								}
+							},
+							"IsEditable": "/SAPAssetManager/Rules/Common/EntityIsLocal.js",
+							"_Name": "FunctionalLocationLstPkr",
+							"_Type": "Control.Type.FormCell.ListPicker"
+						},
+						{
+							"AllowMultipleSelection": false,
+							"Search": {
+								"Enabled": true,
+								"Delay": 500,
+								"MinimumCharacterThreshold": 3,
+								"Placeholder": "$(L,search)",
+								"BarcodeScanner": true
+							},
+							"Caption": "$(L,equipment)",
+							"Value": "{HeaderEquipment}",
+							"OnValueChange": "/SAPAssetManager/Rules/Notifications/CreateUpdate/NotificationCreateUpdatePickerItems.js",
+							"PickerItems": {
+								"DisplayValue": "{{#Property:EquipId}} - {{#Property:EquipDesc}}",
+								"ReturnValue": "{EquipId}",
+								"Target": {
+									"EntitySet": "MyEquipments",
+									"Service": "/SAPAssetManager/Services/AssetManager.service",
+									"QueryOptions": "/SAPAssetManager/Rules/Notifications/EquipmentQueryOptions.js"
+								}
+							},
+							"IsEditable": "/SAPAssetManager/Rules/Common/EntityIsLocal.js",
+							"_Name": "EquipmentLstPkr",
+							"_Type": "Control.Type.FormCell.ListPicker"
+						},
+						{
+							"Caption": "$(L,breakdown)",
+							"Value": "{BreakdownIndicator}",
+							"_Name": "BreakdownSwitch",
+							"_Type": "Control.Type.FormCell.Switch"
+						},
+						{
+							"Caption": "$(L, note)",
+							"PlaceHolder": "$(L,note)",
+							"IsAutoResizing": true,
+							"_Name": "LongTextNote",
+							"Value": "",
+							"_Type": "Control.Type.FormCell.Note",
+							"IsVisible": "/SAPAssetManager/Rules/Common/IsOnCreate.js",
+							"IsEditable": true
+						}
+					]
+				},
+				{
+					"Controls": [
+						{
+							"Caption":"$(L, attachment_description)",
+							"PlaceHolder": "$(L,attachment_description)",
+							"Value": "",
+							"IsAutoResizing": true,
+							"_Name": "AttachmentDescription",
+							"_Type": "Control.Type.FormCell.Note"
+						},
+						{
+							"_Name": "Attachment",
+							"_Type": "Control.Type.FormCell.Attachment",
+							"AttachmentTitle": "$(L,attached_files)",
+							"AttachmentAddTitle": "$(L,add)",
+							"AttachmentActionType": [
+								"AddPhoto",
+								"TakePhoto",
+								"SelectFile"
+							],
+							"AllowedFileTypes": [],
+							"Value": "/SAPAssetManager/Rules/Documents/InitializeAttachments.js"
+						}
+					]
+				},
+				{
+					"Controls": [
+						{
+							"Title": "$(L,discard)",
+							"OnPress": "/SAPAssetManager/Rules/Common/DiscardAction.js",
+							"IsVisible": "/SAPAssetManager/Rules/Common/IsDiscardButtonVisible.js",
+							"_Type": "Control.Type.FormCell.Button",
+							"_Name": "DiscardButton"
+						}
+					]
+				}
+			],
+			"_Name": "FormCellContainer",
+			"_Type": "Control.Type.FormCellContainer"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "NotificationAddPage"
+}

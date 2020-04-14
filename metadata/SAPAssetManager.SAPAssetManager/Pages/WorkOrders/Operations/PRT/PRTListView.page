@@ -1,0 +1,270 @@
+{
+    "Caption": "$(L,prt)",
+    "ActionBar": {
+        "Items": [
+            {
+                "Position": "right",
+                "Icon": "res://add",
+                "OnPress": "/SAPAssetManager/Actions/WorkOrders/Operations/PRT/PRTAddEquipmentPopover.action"
+            }
+        ]
+    },
+    "Controls": [
+        {
+            "Sections": [
+                {
+                    "Header": {
+                        "Caption": "$(L,equipment)"
+                    },
+                    "Footer": {
+                        "Caption": "$(L,see_all_data)",
+                        "AccessoryType": "disclosureIndicator",
+                        "FooterStyle": "attribute",
+                        "AttributeLabel": "/SAPAssetManager/Rules/Operations/PRT/PRTCount.js",
+                        "OnPress": "/SAPAssetManager/Actions/WorkOrders/Operations/PRT/PRTEquipmentsListViewNav.action"
+                    },
+                    "MaxItemCount": 2,
+                    "EmptySection": {
+                        "Caption": "$(L,no_equipment_available)"
+                    },
+                    "ObjectCell": {
+                        "Icons": "/SAPAssetManager/Rules/WorkOrders/Operations/PRT/PRTEquipmentsListIconImages.js",
+                        "AccessoryType": "disclosureIndicator",
+                        "Title": "{Description}",
+                        "OnPress": "/SAPAssetManager/Actions/WorkOrders/Operations/PRT/PRTEquipmentDetailsViewNav.action",
+                        "PreserveIconStackSpacing": false,
+                        "Subhead": "{Equipment}"
+                    },
+                    "Target": {
+                        "EntitySet": "{{#Property:@odata.readLink}}/Tools",
+                        "Service": "/SAPAssetManager/Services/AssetManager.service",
+                        "QueryOptions": "$filter=(PRTCategory eq 'E')&$expand=PRTEquipment&$orderby=ItemNum,ItemCounter"
+                    },
+                    "_Type": "Section.Type.ObjectTable",
+                    "_Name": "Equipment"
+                },
+                {
+                    "Header": {
+                        "Caption": "$(L,materials)"
+                    },
+                    "Footer": {
+                        "Caption": "$(L,see_all_data)",
+                        "AccessoryType": "disclosureIndicator",
+                        "FooterStyle": "attribute",
+                        "AttributeLabel": "/SAPAssetManager/Rules/Operations/PRT/PRTCount.js",
+                        "OnPress": "/SAPAssetManager/Actions/WorkOrders/Operations/PRT/PRTMaterialsListViewNav.action"
+                    },
+                    "MaxItemCount": 2,
+                    "EmptySection": {
+                        "Caption": "$(L,no_materials_available)"
+                    },
+                    "ObjectCell": {
+                        "AccessoryType": "disclosureIndicator",
+                        "Title": "{Description}",
+                        "OnPress": "/SAPAssetManager/Actions/WorkOrders/Operations/PRT/PRTMaterialDetailsViewNav.action",
+                        "PreserveIconStackSpacing": false,
+                        "Subhead": "{Material}"
+                    },
+                    "Target": {
+                        "EntitySet": "{{#Property:@odata.readLink}}/Tools",
+                        "Service": "/SAPAssetManager/Services/AssetManager.service",
+                        "QueryOptions": "$filter=(PRTCategory eq 'M')"
+                    },
+                    "_Type": "Section.Type.ObjectTable",
+                    "_Name": "Material"
+                },
+                {
+                    "Header": {
+                        "Caption": "$(L,miscellaneous)"
+                    },
+                    "Footer": {
+                        "Caption": "$(L,see_all_data)",
+                        "AccessoryType": "disclosureIndicator",
+                        "FooterStyle": "attribute",
+                        "AttributeLabel": "/SAPAssetManager/Rules/Operations/PRT/PRTCount.js",
+                        "OnPress": "/SAPAssetManager/Actions/WorkOrders/Operations/PRT/PRTMiscellaneousListViewNav.action"
+                    },
+                    "MaxItemCount": 2,
+                    "EmptySection": {
+                        "Caption": "$(L,no_miscellaneous_available)"
+                    },
+                    "ObjectCell": {
+                        "AccessoryType": "disclosureIndicator",
+                        "Title": "{Description}",
+                        "OnPress": "/SAPAssetManager/Actions/WorkOrders/Operations/PRT/PRTMiscellaneousDetailsViewNav.action",
+                        "PreserveIconStackSpacing": false,
+                        "Subhead": "{PRTTool}"
+                    },
+                    "Target": {
+                        "EntitySet": "{{#Property:@odata.readLink}}/Tools",
+                        "Service": "/SAPAssetManager/Services/AssetManager.service",
+                        "QueryOptions": "$filter=(PRTCategory eq 'O')"
+                    },
+                    "_Type": "Section.Type.ObjectTable",
+                    "_Name": "Miscellaneous"
+                },
+                {
+                    "Header": {
+                        "Caption": "$(L,measuring_points)"
+                    },
+                    "EmptySection": {
+                        "Caption": "$(L,no_measuring_points_available)"
+                    },
+                    "Footer": {
+                        "Caption": "$(L,see_all_data)",
+                        "AccessoryType": "disclosureIndicator",
+                        "FooterStyle": "attribute",
+                        "AttributeLabel": "/SAPAssetManager/Rules/Operations/PRT/PRTCount.js",
+                        "OnPress": "/SAPAssetManager/Actions/Measurements/MeasuringPointsListViewNav.action"
+                    },
+                    "Layout": {
+                        "NumberOfColumns": 3,
+                        "MinimumInteritemSpacing": 66
+                    },
+                    "Extension": {
+                        "Module": "extension-Analytics",
+                        "Control": "AnalyticsViewExtension",
+                        "Class": "AnalyticsViewExtension",
+                        "MaxWidth": "/SAPAssetManager/Rules/Analytics/AnalyticsMaxWidth.js",
+                        "DimensionRatio": "/SAPAssetManager/Rules/Analytics/AnalyticsDimensionRatio.js",
+                        "ExtensionProperties": {
+                            "BusinessObjects": [
+                                {
+                                    "Target": {
+                                        "Property": "PRTPoint/MeasurementDocs"
+                                    },
+                                    "ChartData": {
+                                        "Title": "{PRTPoint/PointDesc} ({PRTPoint/UoM})",
+                                        "KPIData": {
+
+                                        },
+                                        "entries": {
+                                            "x": "{ReadingDate#format:/SAPAssetManager/Rules/Analytics/AnalyticsSecondsFromUTCFormat.js}",
+                                            "y": "{ReadingValue#format:/SAPAssetManager/Rules/Analytics/AnalyticsReadingValue.js}",
+                                            "label": "{ReadingDate#format:/SAPAssetManager/Rules/Analytics/AnalyticsDateFormat.js}",
+                                            "ChartType": "{IsCounter#format:/SAPAssetManager/Rules/Analytics/ChartType.js}",
+                                            "ValuationCode": "{ValuationCode#format:/SAPAssetManager/Rules/Measurements/ValuationCode.js}",
+                                            "Filter": "{IsCounter#format:/SAPAssetManager/Rules/Analytics/FilterPoints.js}"
+                                        },
+                                        "LineChartDataSet": {
+                                            "PointConfig": {
+                                                "shape": "/SAPAssetManager/Rules/Analytics/AnalyticsShapeConfig.js",
+                                                "color": "/SAPAssetManager/Rules/Analytics/AnalyticsColorConfig.js",
+                                                "size": 5.0
+                                            },
+                                            "SegmentConfig": {
+                                                "colors": "/SAPAssetManager/Rules/Analytics/AnalyticsColorsConfig.js",
+                                                "style": "solid",
+                                                "width": 1.0
+                                            }
+                                        },
+                                        "BarChartDataSet": {
+                                            "BarConfig": {
+                                                "colors": "/SAPAssetManager/Rules/Analytics/AnalyticsColorsConfig.js",
+                                                "width": 0.85
+                                            }
+                                        }
+                                    }
+                                }
+                            ],
+                            "ViewConfig": {
+                                "EnableUserInteraction": false,
+                                "NoDataMessage": "$(L, no_data_message)",
+                                "MarginTablet": {
+                                    "top": "/SAPAssetManager/Rules/Analytics/AnalyticsMarginTopAndBottomConfig.js",
+                                    "bottom": "/SAPAssetManager/Rules/Analytics/AnalyticsMarginTopAndBottomConfig.js",
+                                    "left": "/SAPAssetManager/Rules/Analytics/AnalyticsMarginLeftAndRightConfig.js",
+                                    "right": "/SAPAssetManager/Rules/Analytics/AnalyticsMarginLeftAndRightConfig.js"
+                                },
+                                "MarginPhone": {
+                                    "top": "/SAPAssetManager/Rules/Analytics/AnalyticsMarginTopAndBottomConfig.js",
+                                    "bottom": "/SAPAssetManager/Rules/Analytics/AnalyticsMarginTopAndBottomConfig.js",
+                                    "left": "/SAPAssetManager/Rules/Analytics/AnalyticsMarginLeftAndRightConfig.js",
+                                    "right": "/SAPAssetManager/Rules/Analytics/AnalyticsMarginLeftAndRightConfig.js"
+                                },
+                                "TitleConfig": {
+                                    "title": "",
+                                    "position": "/SAPAssetManager/Rules/Analytics/AnalyticsTitlePosition.js",
+                                    "color": "333333",
+                                    "margin": {
+                                        "top": 16.0,
+                                        "bottom": 0.0,
+                                        "left": 0.0,
+                                        "right": 0.0
+                                    }
+                                },
+                                "ShowXAxis": true,
+                                "ShowYAxis": true,
+                                "XAxisConfig": {
+                                    "style": "/SAPAssetManager/Rules/Analytics/AnalyticsAxisStyleConfig.js",
+                                    "color": "/SAPAssetManager/Rules/Analytics/AnalyticsAxisColorConfig.js",
+                                    "offset": 4.0,
+                                    "labelColor": "/SAPAssetManager/Rules/Analytics/AnalyticsAxisLabelColorConfig.js",
+                                    "labelCount": 2
+                                },
+                                "YAxisConfig": {
+                                    "style": "none",
+                                    "color": "/SAPAssetManager/Rules/Analytics/AnalyticsAxisColorConfig.js",
+                                    "labelColor": "/SAPAssetManager/Rules/Analytics/AnalyticsAxisLabelColorConfig.js",
+                                    "offset": 14.0,
+                                    "labelCount": 2
+                                }
+                            }
+                        },
+                        "OnPress": "/SAPAssetManager/Rules/Measurements/Points/MeasuringPointDetailsNav.js"
+                    },
+                    "Target": {
+                        "EntitySet": "{{#Property:@odata.readLink}}/Tools",
+                        "Service": "/SAPAssetManager/Services/AssetManager.service",
+                        "QueryOptions": "$filter=(PRTCategory eq 'P')&$expand=PRTPoint/MeasurementDocs,PRTPoint/MeasurementDocs/MeasuringPoint&$top=3&$orderby=PRTPoint/SortField&$select=PRTPoint/Point,PRTPoint/PointDesc,PRTPoint/UoM,PRTPoint/IsCounter,PRTPoint/CodeGroup,PRTPoint/CatalogType,PRTPoint/MeasurementDocs/ReadingDate,PRTPoint/MeasurementDocs/ReadingTime,PRTPoint/MeasurementDocs/CodeGroup,PRTPoint/MeasurementDocs/ValuationCode,PRTPoint/MeasurementDocs/CodeShortText,PRTPoint/MeasurementDocs/ReadingValue,PRTPoint/MeasurementDocs/IsCounterReading,PRTPoint/MeasurementDocs/IsCounterReading,PRTPoint/MeasurementDocs/CounterReadingDifference,PRTPoint/MeasurementDocs/MeasurementDocNum,PRTPoint/MeasurementDocs/MeasuringPoint/CharName,PRTPoint/MeasurementDocs/MeasuringPoint/IsCounter"
+                    },
+                    "_Type": "Section.Type.ObjectCollection",
+                    "_Name": "Point",
+                    "DataSubscriptions": [
+                        "MeasurementDocuments"
+                    ]
+                },
+                {
+                    "Header": {
+                        "Caption": "$(L,documents)"
+                    },
+                    "EmptySection": {
+                        "Caption": "$(L,no_documents_available)"
+                    },
+                    "MaxItemCount": 2,
+                    "ObjectCell": {
+                        "Icons": "/SAPAssetManager/Rules/Documents/DocumentListViewIconImages.js",
+                        "ProgressIndicator": "/SAPAssetManager/Rules/Operations/PRT/Documents/PRTSetIndicatorStateWrapper.js",
+                        "DetailImage": "/SAPAssetManager/Rules/Documents/DocumentTypeIcon.js",
+                        "DetailImageIsCircular": false,
+                        "Title": "{{#Property:PRTDocument/#Property:FileName}}",
+                        "Subhead": "{{#Property:PRTDocument/#Property:Description}}",
+                        "Footnote": "/SAPAssetManager/Rules/Operations/PRT/Documents/PRTDocumentFileSizeWrapper.js",
+                        "OnPress": "/SAPAssetManager/Rules/Operations/PRT/Documents/PRTDownloadOrOpenDocumentWrapper.js"
+                    },
+                    "Footer": {
+                        "Caption": "$(L,see_all)",
+                        "AccessoryType": "disclosureIndicator",
+                        "FooterStyle": "attribute",
+                        "AttributeLabel": "/SAPAssetManager/Rules/Operations/PRT/Documents/PRTDocumentsCount.js",
+                        "OnPress": "/SAPAssetManager/Actions/WorkOrders/Operations/PRT/PRTDocumentsListViewNav.action"
+                    },
+                    "Target": {
+                        "EntitySet": "{{#Property:@odata.readLink}}/Tools",
+                        "Service": "/SAPAssetManager/Services/AssetManager.service",
+                        "QueryOptions": "$filter=PRTCategory eq 'D'&$expand=PRTDocument"
+                    },
+                    "_Type": "Section.Type.ObjectTable",
+                    "_Name": "DocumentSection",
+                    "DataSubscriptions": [
+                        "Documents"
+                    ]
+                }
+            ],
+            "_Type": "Control.Type.SectionedTable"
+        }
+    ],
+    "OnReturning": "/SAPAssetManager/Rules/Operations/PRT/Documents/PRTDocumentsListReturning.js",
+    "_Type": "Page",
+    "_Name": "PRTListViewPage"
+}

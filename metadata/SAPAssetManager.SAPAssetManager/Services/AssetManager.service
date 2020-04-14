@@ -1,0 +1,7 @@
+{
+	"AppId": "com.sap.customsamvanti",
+	"DestinationName": "DEST_SAM1911_PPROP",
+	"LanguageURLParam": "sap-language",
+	"OfflineEnabled": true,
+	"ServiceUrl": "/destinations/mobileservices"
+}

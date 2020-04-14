@@ -1,0 +1,323 @@
+{
+	"ActionBar": {
+		"Items": [
+			{
+				"Icon": "res://profileicon",
+				"OnPress": "/SAPAssetManager/Actions/User/UserProfileSettings.action",
+				"Position": "left",
+				"Text": "User"
+			},
+			{
+				"Icon": "res://sync",
+				"OnPress": "/SAPAssetManager/Actions/SyncInitializeProgressBannerMessage.action",
+				"Position": "right"
+			}
+		]
+	},
+	"Caption": "$(L,app_display_name)",
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"Class": "MapViewExtension",
+					"Control": "MapViewExtension",
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"ExtensionProperties": {
+						"BusinessObjects": [
+							{
+								"Enable": true,
+								"Legend": "MarkerJob",
+								"ObjectScheme": {
+									"Actions": [
+									],
+									"Geometry": "WOGeometries/Geometry/GeometryValue",
+									"Layer": "Job",
+									"Properties": {
+										"ID": "{OrderId}"
+									},
+									"Symbol": {
+										"fillColor": "29517133",
+										"lineColor": "295171",
+										"lineWidth": 2,
+										"marker": "/SAPAssetManager/Rules/Maps/Icons/WorkOrderIcon.js",
+										"styleHeight": "/SAPAssetManager/Rules/Maps/MarkerSizeHeight.js",
+										"styleWidth": "/SAPAssetManager/Rules/Maps/MarkerSizeWidth.js",
+										"xOffset": "/SAPAssetManager/Rules/Maps/MarkerOffset.js",
+										"yOffset": "/SAPAssetManager/Rules/Maps/MarkerOffset.js"
+									}
+								},
+								"Target": {
+									"EntitySet": "MyWorkOrderHeaders",
+									"KeyProperties": [
+									],
+									"Properties": [
+									],
+									"QueryOptions": "$expand=WOGeometries/Geometry,MobileStatus,MarkedJob&$filter=WOGeometries/any(wg:sap.entityexists(wg/Geometry))",
+									"Service": "/SAPAssetManager/Services/AssetManager.service"
+								},
+								"Title": "$(L,workorders)",
+								"Type": "Job"
+							},
+							{
+								"Enable": true,
+								"Legend": "MarkerAsset",
+								"ObjectScheme": {
+									"Actions": [
+									],
+									"Geometry": "EquipGeometries/Geometry/GeometryValue",
+									"Layer": "Equipment",
+									"Properties": {
+										"ID": "{EquipId}"
+									},
+									"Symbol": {
+										"fillColor": "FFA32533",
+										"lineColor": "FFA325",
+										"lineWidth": 2,
+										"marker": "/SAPAssetManager/Rules/Maps/Icons/EquipmentIcon.js",
+										"styleHeight": "/SAPAssetManager/Rules/Maps/MarkerSizeHeight.js",
+										"styleWidth": "/SAPAssetManager/Rules/Maps/MarkerSizeWidth.js",
+										"xOffset": "/SAPAssetManager/Rules/Maps/MarkerOffset.js",
+										"yOffset": "/SAPAssetManager/Rules/Maps/MarkerOffset.js"
+									}
+								},
+								"Target": {
+									"EntitySet": "MyEquipments",
+									"KeyProperties": [
+									],
+									"Properties": [
+									],
+									"QueryOptions": "$expand=EquipGeometries/Geometry&$filter=EquipGeometries/any(eg:sap.entityexists(eg/Geometry))",
+									"Service": "/SAPAssetManager/Services/AssetManager.service"
+								},
+								"Title": "$(L, dl_equip)",
+								"Type": "Equipment"
+							},
+							{
+								"Enable": true,
+								"Legend": "MarkerFunctionalLocation",
+								"ObjectScheme": {
+									"Actions": [
+									],
+									"Geometry": "FuncLocGeometries/Geometry/GeometryValue",
+									"Layer": "FunctionalLocation",
+									"Properties": {
+										"ID": "{FuncLocId}"
+									},
+									"Symbol": {
+										"fillColor": "E8743B33",
+										"lineColor": "E8743B",
+										"lineWidth": 2,
+										"marker": "MarkerFunctionalLocation",
+										"styleHeight": "/SAPAssetManager/Rules/Maps/MarkerSizeHeight.js",
+										"styleWidth": "/SAPAssetManager/Rules/Maps/MarkerSizeWidth.js",
+										"xOffset": "/SAPAssetManager/Rules/Maps/MarkerOffset.js",
+										"yOffset": "/SAPAssetManager/Rules/Maps/MarkerOffset.js"
+									}
+								},
+								"Target": {
+									"EntitySet": "MyFunctionalLocations",
+									"KeyProperties": [
+									],
+									"Properties": [
+									],
+									"QueryOptions": "$expand=FuncLocGeometries/Geometry&$filter=FuncLocGeometries/any(fg:sap.entityexists(fg/Geometry))",
+									"Service": "/SAPAssetManager/Services/AssetManager.service"
+								},
+								"Title": "$(L, dl_floc)",
+								"Type": "FunctionalLocation"
+							},
+							{
+								"Enable": true,
+								"Legend": "MarkerNotification",
+								"ObjectScheme": {
+									"Actions": [
+									],
+									"Geometry": "NotifGeometries/Geometry/GeometryValue",
+									"Layer": "Notification",
+									"Properties": {
+										"ID": "{NotificationNumber}"
+									},
+									"Symbol": {
+										"fillColor": "19A97933",
+										"lineColor": "19A979",
+										"lineWidth": 2,
+										"marker": "/SAPAssetManager/Rules/Maps/Icons/NotificationIcon.js",
+										"styleHeight": "/SAPAssetManager/Rules/Maps/MarkerSizeHeight.js",
+										"styleWidth": "/SAPAssetManager/Rules/Maps/MarkerSizeWidth.js",
+										"xOffset": "/SAPAssetManager/Rules/Maps/MarkerOffset.js",
+										"yOffset": "/SAPAssetManager/Rules/Maps/MarkerOffset.js"
+									}
+								},
+								"Target": {
+									"EntitySet": "MyNotificationHeaders",
+									"KeyProperties": [
+									],
+									"Properties": [
+									],
+									"QueryOptions": "$expand=NotifGeometries/Geometry&$filter=NotifGeometries/any(ng:sap.entityexists(ng/Geometry))",
+									"Service": "/SAPAssetManager/Services/AssetManager.service"
+								},
+								"Title": "$(L, dl_notif)",
+								"Type": "Notification"
+							}
+						],
+						"Config": {
+							"BaseMaps": [
+							],
+							"DefaultViewEnvelope": {
+								"maxPoint": {
+									"x": -7445653.57,
+									"y": 6340332.34
+								},
+								"minPoint": {
+									"x": -13898124.21,
+									"y": 2801774.86
+								},
+								"padding": 10000
+							},
+							"FeatureLayers": [
+							],
+							"Target": {
+								"EntitySet": "GISMapParameters",
+								"KeyProperties": [
+								],
+								"Properties": [
+								],
+								"Service": "/SAPAssetManager/Services/AssetManager.service"
+							},
+							"ViewConfig": {
+								"EnableUserInteraction": false,
+								"UseDynamicLayerDisplayPrefs": true
+							}
+						},
+						"InfoPanel": {
+							"DirectionsButtonText": "$(L, map_info_panel_directions)"
+						},
+						"MapToolsetIcons": [
+						]
+					},
+					"Header": {
+						"UseTopPadding": false
+					},
+					"Height": 233,
+					"Module": "extension-MapFramework",
+					"OnPress": "/SAPAssetManager/Actions/Extensions/MapNav.action",
+					"_Name": "SectionExtension0",
+					"_Type": "Section.Type.Extension"
+				},
+				{
+					"DataSubscriptions": [
+						"MyWorkOrderHeaders"
+					],
+					"EmptySection": {
+						"Caption": "$(L,no_high_text)",
+						"FooterVisible": false
+					},
+					"Footer": {
+						"AccessoryType": "disclosureIndicator",
+						"AttributeLabel": "/SAPAssetManager/Rules/WorkOrders/WorkOrderHighPriorityOrdersCount.js",
+						"Caption": "$(L,see_all)",
+						"FooterStyle": "attribute",
+						"OnPress": "/SAPAssetManager/Rules/WorkOrders/ListView/WorkOrdersHighPriorityListView.js",
+						"UseBottomPadding": false
+					},
+					"Header": {
+						"Caption": "$(L,high_workorders)",
+						"UseTopPadding": true
+					},
+					"Layout": {
+						"MinimumInteritemSpacing": 66,
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 4,
+					"ObjectCell": {
+						"AccessoryType": "disclosureIndicator",
+						"OnPress": "/SAPAssetManager/Rules/WorkOrders/WorkOrderHighPriorityDetailsNav.js",
+						"PreserveIconStackSpacing": false,
+						"Subhead": "{OrderId}",
+						"Title": "#Property:OrderDescription"
+					},
+					"Target": {
+						"EntitySet": "MyWorkOrderHeaders",
+						"QueryOptions": "$filter=Priority eq '1' or  Priority eq '2'&$orderby=Priority,DueDate,OrderId",
+						"Service": "/SAPAssetManager/Services/AssetManager.service"
+					},
+					"_Name": "HighPriorityOrdersSection",
+					"_Type": "Section.Type.ObjectCollection"
+				},
+				{
+					"DataSubscriptions": "/SAPAssetManager/Rules/Common/DataSubscriptions.js",
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"Layout": {
+						"MinimumInteritemSpacing": 66,
+						"NumberOfColumns": 2
+					},
+					"SimplePropertyCells": [
+						{
+							"SimplePropertyCell": {
+								"AccessoryType": "disclosureIndicator",
+								"KeyName": "$(L,'suboperations')",
+								"OnPress": "/SAPAssetManager/Rules/WorkOrders/SubOperations/SubOperationsListViewNav.js",
+								"Value": "/SAPAssetManager/Rules/SubOperations/SubOperationCount.js",
+								"Visible": "/SAPAssetManager/Rules/WorkOrders/SubOperations/IsSubOperationLevelAssigmentType.js"
+							}
+						},
+						{
+							"SimplePropertyCell": {
+								"AccessoryType": "disclosureIndicator",
+								"KeyName": "$(L,'operations')",
+								"OnPress": "/SAPAssetManager/Rules/WorkOrders/Operations/OperationsListViewNav.js",
+								"Value": "/SAPAssetManager/Rules/Operations/OperationCount.js",
+								"Visible": false
+							}
+						},
+						{
+							"SimplePropertyCell": {
+								"AccessoryType": "disclosureIndicator",
+								"KeyName": "$(L,workorders)",
+								"OnPress": "/SAPAssetManager/Rules/WorkOrders/WorkOrdersListViewNav.js",
+								"Value": "/SAPAssetManager/Rules/WorkOrders/WorkOrdersCount.js"
+							}
+						},
+						{
+							"SimplePropertyCell": {
+								"AccessoryType": "disclosureIndicator",
+								"KeyName": "$(L,equipment)",
+								"OnPress": "/SAPAssetManager/Rules/Equipment/EquipmentListViewNav.js",
+								"Value": "/SAPAssetManager/Rules/Equipment/EquipmentCount.js"
+							}
+						},
+						{
+							"SimplePropertyCell": {
+								"AccessoryType": "disclosureIndicator",
+								"KeyName": "$(L,reminders)",
+								"OnPress": "/SAPAssetManager/Actions/Reminders/RemindersListViewNav.action",
+								"Value": "/SAPAssetManager/Rules/OverviewPage/OverviewPageRemindersCount.js"
+							}
+						},
+						{
+							"SimplePropertyCell": {
+								"AccessoryType": "disclosureIndicator",
+								"KeyName": "$(L,functional_locations)",
+								"OnPress": "/SAPAssetManager/Rules/FunctionalLocation/FunctionalLocationListViewNav.js",
+								"Value": "/SAPAssetManager/Rules/FunctionalLocation/FunctionalLocationCount.js"
+							}
+						}
+					],
+					"_Name": "SectionSimplePropertyCollection0",
+					"_Type": "Section.Type.SimplePropertyCollection"
+				}
+			],
+			"_Name": "OverviewPageSectionedTable",
+			"_Type": "Control.Type.SectionedTable"
+		}
+	],
+	"OnLoaded": "/SAPAssetManager/Rules/OverviewPage/OverviewOnPageLoad.js",
+	"OnReturning": "/SAPAssetManager/Rules/OverviewPage/OverviewOnPageReturning.js",
+	"_Name": "OverviewPage",
+	"_Type": "Page"
+}

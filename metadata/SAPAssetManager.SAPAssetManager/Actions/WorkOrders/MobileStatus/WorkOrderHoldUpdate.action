@@ -1,0 +1,14 @@
+{
+    "Properties": {
+        "ObjectKey": "#Property:ObjectKey",
+        "ObjectType": "/SAPAssetManager/Rules/WorkOrders/WorkOrderObjectType.js",
+        "MobileStatus": "/SAPAssetManager/Rules/MobileStatus/MobileStatusHold.js",
+        "EffectiveTimestamp": "/SAPAssetManager/Rules/DateTime/EndDateTime.js"
+    },
+    "Target": {
+        "EntitySet": "MobileStatuses",
+        "Service": "/SAPAssetManager/Services/AssetManager.service",
+        "ReadLink" : "/SAPAssetManager/Rules/MobileStatus/MobileStatusReadLink.js"
+    },
+    "_Type": "Action.Type.ODataService.UpdateEntity"
+}

@@ -1,0 +1,122 @@
+{
+	"ActionBar": {
+		"Items": [
+			{
+				"OnPress": "/SAPAssetManager/Actions/vanti/Open_adjuntos.action",
+				"Position": "right",
+				"SystemItem": "Camera",
+				"Text": "Item",
+				"Visible": true
+			}
+		]
+	},
+	"Caption": "Datos Índice Odorización",
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"Caption": "Datos Indice de Odorización",
+					"Controls": [
+						{
+							"Caption": "Indice Odo. Analit.",
+							"IsEditable": true,
+							"IsVisible": true,
+							"_Name": "FormCellSimpleProperty0",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Indice Odo. Fisio %",
+							"IsEditable": true,
+							"IsVisible": true,
+							"_Name": "FormCellSimpleProperty1",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						}
+					],
+					"Visible": true
+				},
+				{
+					"Caption": "Datos Presión de red",
+					"Controls": [
+						{
+							"AllowEmptySelection": false,
+							"AllowMultipleSelection": false,
+							"Caption": "Unidad de medida",
+							"IsEditable": true,
+							"IsPickerDismissedOnSelection": false,
+							"IsSearchCancelledAfterSelection": false,
+							"IsSelectedSectionEnabled": false,
+							"IsVisible": true,
+							"PickerItems": [
+								"mbar",
+								"atm",
+								"Pa"
+							],
+							"PickerPrompt": "Please select one single item",
+							"_Name": "FormCellListPicker3",
+							"_Type": "Control.Type.FormCell.ListPicker"
+						},
+						{
+							"Caption": "Presión de red",
+							"IsEditable": true,
+							"IsVisible": true,
+							"_Name": "FormCellSimpleProperty2",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						}
+					],
+					"Visible": true
+				},
+				{
+					"Caption": "Datos Presión atmosférica",
+					"Controls": [
+						{
+							"AllowEmptySelection": false,
+							"AllowMultipleSelection": false,
+							"Caption": "Unidad de medida",
+							"IsEditable": true,
+							"IsPickerDismissedOnSelection": false,
+							"IsSearchCancelledAfterSelection": false,
+							"IsSelectedSectionEnabled": false,
+							"IsVisible": true,
+							"PickerItems": [
+								"mbar",
+								"atm",
+								"Pa"
+							],
+							"PickerPrompt": "Please select one single item",
+							"Value": [
+								"Two"
+							],
+							"_Name": "FormCellListPicker7",
+							"_Type": "Control.Type.FormCell.ListPicker"
+						},
+						{
+							"Caption": "Presión atmosférica",
+							"IsEditable": false,
+							"IsVisible": true,
+							"_Name": "FormCellSimpleProperty6",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						}
+					],
+					"Visible": true
+				}
+			],
+			"_Name": "FormCellContainer0",
+			"_Type": "Control.Type.FormCellContainer"
+		}
+	],
+	"ToolBar": {
+		"Controls": [
+			{
+				"Caption": "Siguente",
+				"Clickable": true,
+				"Enabled": true,
+				"OnPress": "/SAPAssetManager/Actions/vanti/Open_form_4.action",
+				"Visible": true,
+				"_Name": "ToolbarItem0",
+				"_Type": "Control.Type.ToolbarItem"
+			}
+		]
+	},
+	"_Name": "pageTestForm3",
+	"_Type": "Page"
+}

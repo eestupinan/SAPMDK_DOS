@@ -1,0 +1,81 @@
+{
+    "Service": "/SAPAssetManager/Services/AssetManager.service",
+    "StoreName": "SAMStore",
+    "DefiningRequests": [
+      {
+        "Name": "MyWorkOrderHeaders",
+        "Query": "MyWorkOrderHeaders"
+      },
+      {
+        "Name": "MyWorkOrderHeaderLongTexts",
+        "Query": "MyWorkOrderHeaderLongTexts"
+      },
+      {
+        "Name": "MyWorkOrderOperations",
+        "Query": "MyWorkOrderOperations"
+      },
+      {
+        "Name": "MyWorkOrderOperationLongTexts",
+        "Query": "MyWorkOrderOperationLongTexts"
+      },
+      {
+        "Name": "MyWorkOrderSubOperations",
+        "Query": "MyWorkOrderSubOperations"
+      },
+      {
+        "Name": "MyWorkOrderSubOpLongTexts",
+        "Query": "MyWorkOrderSubOpLongTexts"
+      },
+      {
+        "Name": "MyWorkOrderComponents",
+        "Query": "MyWorkOrderComponents"
+      },
+      {
+        "Name": "MyWorkOrderComponentMatDocs",
+        "Query": "MyWorkOrderComponentMatDocs"
+      },
+      {
+        "Name": "MyWorkOrderTools",
+        "Query": "MyWorkOrderTools"
+      },
+      {
+        "Name": "MyWorkOrderDocuments",
+        "Query": "MyWorkOrderDocuments"
+      },
+      {
+        "Name": "MyWorkOrderGeometries",
+        "Query": "MyWorkOrderGeometries"
+      },
+      {
+        "Name": "MyWorkOrderPartners",
+        "Query": "MyWorkOrderPartners"
+      },
+      {
+        "Name": "MyWorkOrderComponentLongTexts",
+        "Query": "MyWorkOrderComponentLongTexts"
+      },
+      {
+        "Name": "WorkOrderHistories",
+        "Query": "WorkOrderHistories"
+      },
+      {
+        "Name": "WorkOrderHistoryTexts",
+        "Query": "WorkOrderHistoryTexts"
+      },
+      {
+        "Name": "MobileStatuses",
+        "Query": "MobileStatuses"
+      },
+      {
+        "Name": "Documents",
+        "Query": "Documents"
+      },
+      {
+        "Name": "Confirmations",
+        "Query": "Confirmations"
+      }
+  ],
+    "OnSuccess": "/SAPAssetManager/Rules/PushNotifications/PushNotificationsDownloadSuccessAlertMessage.js",
+    "OnFailure": "/SAPAssetManager/Rules/PushNotifications/PushNotificationsDownloadFailureAlertMessage.js",
+    "_Type": "Action.Type.OfflineOData.Download"
+  }

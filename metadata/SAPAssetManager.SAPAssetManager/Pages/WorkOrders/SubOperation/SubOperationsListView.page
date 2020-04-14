@@ -1,0 +1,70 @@
+{
+    "Caption": "$(L,suboperations)",
+	"OnLoaded": "/SAPAssetManager/Rules/WorkOrders/SubOperations/WorkOrderSubOperationListViewOnLoaded.js",
+    "OnReturning": "/SAPAssetManager/Rules/WorkOrders/Operations/WorkOrderOperationListViewCaption.js",
+    "ActionBar": {
+        "Items": [
+            {
+                "Position": "right",
+                "Icon": "res://sync",
+                "OnPress": "/SAPAssetManager/Actions/SyncInitializeProgressBannerMessage.action"
+            },
+            {
+                "Position": "right",
+                "Icon": "res://add",
+                "Text": "$(L,add)",               
+                "OnPress": "/SAPAssetManager/Rules/SubOperations/CreateUpdate/SubOperationCreateNav.js"
+            },
+            {
+                "Position": "right",
+                "Icon": "/SAPAssetManager/Rules/Common/Platform/FilterIcon.js",
+                "Text": "$(L,filter)",
+                "OnPress": "/SAPAssetManager/Actions/WorkOrders/SubOperations/SubOperationsFilter.action"
+            }
+        ]
+    },
+    "Controls": [
+        {
+            "Sections": [
+                {
+                    "Search": {
+                        "Enabled": true,
+                        "Delay": 500,
+                        "MinimumCharacterThreshold": 3,
+                        "Placeholder": "$(L,search)",
+                        "BarcodeScanner": true
+                    },
+                    "Header": {
+                         "UseTopPadding": false
+                    },
+                    "EmptySection": {
+                        "Caption": "$(L,no_suboperation)"
+                    },
+                    "ObjectCell": 
+                    {   
+                        "PreserveIconStackSpacing": true,
+                        "Icons": "/SAPAssetManager/Rules/SubOperations/SubOperationsListViewIconImages.js",
+                        "AccessoryType": "disclosureIndicator",
+                        "Title": "{{#Property:OperationShortText}} ({{#Property:OperationNo}})",
+                        "StatusText": "/SAPAssetManager/Rules/MobileStatus/SubOperationMobileStatus.js",
+                        "Subhead": "{SubOperationNo}",
+                        "Footnote": "{OrderId}",
+                        "OnPress": "/SAPAssetManager/Actions/WorkOrders/SubOperations/SubOperationDetailsNav.action"
+                    },
+                    "Target": {
+                        "EntitySet": "/SAPAssetManager/Rules/WorkOrders/SubOperations/SubOperationsEntitySet.js",
+                        "Service": "/SAPAssetManager/Services/AssetManager.service",
+                        "QueryOptions": "/SAPAssetManager/Rules/SubOperations/SubOperationsListViewQueryOption.js"
+                    },
+                    "_Type": "Section.Type.ObjectTable"
+                }
+            ],
+            "_Type": "Control.Type.SectionedTable",
+            "_Name" : "SectionedTable"
+        }
+    ],
+    "_Type": "Page",
+    "_Name": "SubOperationsListViewPage",
+    "DataSubscriptions": ["MyWorkOrderSubOperations", "MyWorkOrderSubOpLongTexts", "MobileStatuses", "Confirmations"]
+
+}

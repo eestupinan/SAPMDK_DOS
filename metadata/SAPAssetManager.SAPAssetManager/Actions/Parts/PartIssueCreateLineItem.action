@@ -1,0 +1,24 @@
+{
+    "_Type": "Action.Type.ODataService.CreateEntity",
+    "Target": {
+        "EntitySet": "MaterialDocItems",
+        "Service": "/SAPAssetManager/Services/AssetManager.service"
+    },
+    "Properties": {
+        "OrderNumber": "/SAPAssetManager/Rules/Parts/Issue/LineItem/PartIssueLineItemOrderNumber.js",
+        "MovementType": "/SAPAssetManager/Rules/Parts/Issue/LineItem/PartIssueLineItemMovementType.js",
+        "ReservationNumber": "/SAPAssetManager/Rules/Parts/Issue/LineItem/PartIssueLineItemReservationNumber.js",
+        "ReservationItemNumber": "/SAPAssetManager/Rules/Parts/Issue/LineItem/PartIssueLineItemReservationItemNumber.js",
+        "Material": "/SAPAssetManager/Rules/Parts/Issue/LineItem/PartIssueLineItemMaterial.js",
+        "Plant": "/SAPAssetManager/Rules/Parts/Issue/LineItem/PartIssueLineItemPlant.js",
+        "StorageLocation": "/SAPAssetManager/Rules/Parts/Issue/LineItem/PartIssueLineItemStorageLocation.js",
+        "EntryQuantity": "/SAPAssetManager/Rules/Parts/Issue/LineItem/PartIssueLineItemQuantity.js",
+        "EntryUOM": "/SAPAssetManager/Rules/Parts/Issue/LineItem/PartIssueLineItemUOM.js"
+    },
+    "Headers": {
+        "OfflineOData.RemoveAfterUpload": "true"
+    },
+    "CreateLinks": "/SAPAssetManager/Rules/Parts/Issue/CreateUpdate/PartIssueCreateLineItemLinks.js",
+    "OnSuccess": "/SAPAssetManager/Rules/Parts/Issue/CreateUpdate/PartIssueCreateLineItemSuccess.js",
+    "OnFailure": "/SAPAssetManager/Actions/CreateUpdateDelete/CreateEntityFailureMessage.action"
+}

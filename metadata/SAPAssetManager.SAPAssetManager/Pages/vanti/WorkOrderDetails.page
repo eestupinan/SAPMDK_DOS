@@ -1,0 +1,88 @@
+{
+
+	"Caption": "/SAPAssetManager/Rules/WorkOrders/Header/WorkOrderHeader.js",
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"DataSubscriptions": [
+						"MyWorkOrderComponents",
+						"Documents",
+						"Confirmations"
+					],
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"Layout": {
+						"MinimumInteritemSpacing": 66,
+						"NumberOfColumns": 1
+					},
+					"SimplePropertyCells": [
+						{
+							"SimplePropertyCell": {
+								"AccessoryType": "disclosureIndicator",
+								"KeyName": "Datos clientes",
+								"OnPress": "/SAPAssetManager/Actions/Parts/PartsListViewNav.action"
+							}
+						},
+						{
+							"SimplePropertyCell": {
+								"AccessoryType": "disclosureIndicator",
+								"KeyName": "Datos técnicos",
+								"OnPress": "/SAPAssetManager/Actions/Documents/DocumentsBDSListNav.action"
+							}
+						}
+					],
+					"_Name": "SectionSimplePropertyCollection0",
+					"_Type": "Section.Type.SimplePropertyCollection"
+				}
+			],
+			"_Name": "SectionedTable",
+			"_Type": "Control.Type.SectionedTable"
+		}
+	],
+	"DataSubscriptions": [
+		"MyWorkOrderOperations",
+		"MyWorkOrderDocuments",
+		"PMMobileStatuses",
+		"UserTimeEntries"
+	],
+	"OnLoaded": "/SAPAssetManager/Rules/WorkOrders/Details/WorkOrderDetailsOnPageLoad.js",
+	"ToolBar": {
+		"Controls": [
+			{
+				"Clickable": true,
+				"Enabled": true,
+				"SystemItem": "FlexibleSpace",
+				"Visible": true,
+				"_Name": "FlexibleSpaceLeftTbI",
+				"_Type": "Control.Type.ToolbarItem"
+			},
+			{
+				"Caption": "/SAPAssetManager/Rules/WorkOrders/MobileStatus/WorkOrderMobileStatusToolBarCaption.js",
+				"Clickable": true,
+				"DataSubscriptions": [
+					"Confirmations",
+					"PMMobileStatuses",
+					"MyWorkOrderHeaders",
+					"UserTimeEntries"
+				],
+				"Enabled": "/SAPAssetManager/Rules/WorkOrders/MobileStatus/WorkOrderEnableMobileStatus.js",
+				"OnPress": "/SAPAssetManager/Rules/WorkOrders/MobileStatus/WorkOrderChangeStatusPopover.js",
+				"Visible": true,
+				"_Name": "IssuePartTbI",
+				"_Type": "Control.Type.ToolbarItem"
+			},
+			{
+				"Clickable": true,
+				"Enabled": true,
+				"SystemItem": "FlexibleSpace",
+				"Visible": true,
+				"_Name": "FlexibleSpaceRightTbI",
+				"_Type": "Control.Type.ToolbarItem"
+			}
+		]
+	},
+	"_Name": "WorkOrderDetailsPage",
+	"_Type": "Page"
+}

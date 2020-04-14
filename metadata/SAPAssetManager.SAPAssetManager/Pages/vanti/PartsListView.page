@@ -1,0 +1,71 @@
+{
+	"Caption": "Partes",
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"EmptySection": {
+						"Caption": "$(L,no_parts_available)",
+						"FooterVisible": false
+					},
+					"Header": {
+						"Caption": "Materiales",
+						"UseTopPadding": false
+					},
+					"ObjectCell": {
+						"AccessoryType": "disclosureIndicator",
+						"OnPress": "/SAPAssetManager/Actions/Parts/PartDetailsNav.action",
+						"PreserveIconStackSpacing": true
+					},
+					"Search": {
+						"BarcodeScanner": true,
+						"Delay": 500,
+						"Enabled": "/SAPAssetManager/Rules/Parts/PartsSearchEnabled.js",
+						"MinimumCharacterThreshold": 3,
+						"Placeholder": "$(L,search)"
+					},
+					"_Name": "PartsList",
+					"_Type": "Section.Type.ObjectTable"
+				},
+				{
+					"EmptySection": {
+						"Caption": "$(L,no_parts_available)",
+						"FooterVisible": false
+					},
+					"Header": {
+						"Caption": "Servicios",
+						"UseTopPadding": true
+					},
+					"ObjectCell": {
+						"AccessoryType": "disclosureIndicator",
+						"DetailImageIsCircular": false,
+						"Footnote": "{{#Property:OperationDesc}} ({{#Property:OperationNo}})",
+						"Icons": "/SAPAssetManager/Rules/Parts/PartsItemIconImages.js",
+						"OnPress": "/SAPAssetManager/Actions/Parts/PartDetailsNav.action",
+						"PreserveIconStackSpacing": true,
+						"ProgressIndicator": "inProgress"
+					},
+					"Search": {
+						"BarcodeScanner": true,
+						"Delay": 500,
+						"Enabled": "/SAPAssetManager/Rules/Parts/PartsSearchEnabled.js",
+						"MinimumCharacterThreshold": 3,
+						"Placeholder": "$(L,search)"
+					},
+					"Visible": true,
+					"_Name": "SectionObjectTable0",
+					"_Type": "Section.Type.ObjectTable"
+				}
+			],
+			"_Name": "PartsListSectionedTable",
+			"_Type": "Control.Type.SectionedTable"
+		}
+	],
+	"DataSubscriptions": [
+		"MyWorkOrderComponents",
+		"MaterialDocuments",
+		"MaterialDocItems"
+	],
+	"_Name": "PartsListViewPage",
+	"_Type": "Page"
+}

@@ -1,0 +1,11 @@
+{
+    "OnFailure": "/SAPAssetManager/Rules/Common/UpdateRequiredFailed.js",
+    "OnSuccess": "/SAPAssetManager/Rules/Checklists/Create/ChecklistCreateOnCommit.js",
+    "RequiredFields": [
+        "CategoryLstPkr",
+        "TemplateLstPkr"
+    ],
+    "_Type": "Action.Type.CheckRequiredFields",
+    "ShowActivityIndicator": true,
+    "ActivityIndicatorText" : "  "
+}

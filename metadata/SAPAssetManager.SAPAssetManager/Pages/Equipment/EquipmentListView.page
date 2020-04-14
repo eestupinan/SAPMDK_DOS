@@ -1,0 +1,62 @@
+{
+	"Caption": "$(L,equipment)",
+	"_Type": "Page",
+	"_Name": "EquipmentListViewPage",
+	"OnLoaded": "/SAPAssetManager/Rules/Equipment/EquipmentListViewOnPageLoad.js",
+	"ActionBar":
+	{
+		"Items":
+		[
+		{
+				"Position": "right",
+				"Icon": "res://sync",
+				"OnPress": "/SAPAssetManager/Actions/SyncInitializeProgressBannerMessage.action"
+		},
+		{
+			"Position": "right",
+			"Icon": "/SAPAssetManager/Rules/Common/Platform/FilterIcon.js",
+			"Text": "$(L,filter)",
+			"OnPress": "/SAPAssetManager/Actions/Equipment/EquipmentFilter.action"
+		}]
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"Search": {
+						"Enabled": "/SAPAssetManager/Rules/Equipment/EquipmentSearchEnabled.js",
+						"Delay": 500,
+						"MinimumCharacterThreshold": 3,
+						"Placeholder": "$(L,search)",
+						"BarcodeScanner": true
+					},
+					"Header": {
+		 				"UseTopPadding": false
+					},
+					"EmptySection": {
+						"Caption": "$(L,no_equipments_available)"
+					},
+					"ObjectCell": {
+						"PreserveIconStackSpacing": true,
+						"Icons": "/SAPAssetManager/Rules/Equipment/EquipmentListViewIconImages.js",
+						"Title": "{EquipDesc}",
+						"Subhead": "/SAPAssetManager/Rules/Equipment/EquipmentListViewFormat.js",
+						"Footnote": "{EquipId}",
+						"AccessoryType": "disclosureIndicator",
+						"SubstatusText": "/SAPAssetManager/Rules/Equipment/EquipmentListViewFormat.js",
+						"OnPress": "/SAPAssetManager/Rules/Equipment/EquipmentDetailsNav.js"
+					},
+					"Target": {
+						"EntitySet": "/SAPAssetManager/Rules/Equipment/EquipmentEntitySet.js",
+						"Service": "/SAPAssetManager/Services/AssetManager.service",
+						"QueryOptions": "/SAPAssetManager/Rules/Equipment/EquipmentQueryOptions.js"
+					},
+					"_Type": "Section.Type.ObjectTable",
+					"_Name" : "EquipmentListViewSection"
+				}
+			],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name" : "SectionedTable"
+		}
+	]
+}

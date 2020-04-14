@@ -1,0 +1,48 @@
+{
+	"Caption": "$(L,add_documents)",
+	"ActionBar": {
+    	"Items": [{
+			"Position": "right",
+			"SystemItem": "/SAPAssetManager/Rules/Common/Platform/DoneIcon.js",
+            "Text": "/SAPAssetManager/Rules/Common/Platform/DoneText.js",
+			"OnPress": "/SAPAssetManager/Rules/Documents/DocumentValidation.js"
+		},{
+            "Position": "left",
+            "SystemItem": "Cancel",
+            "OnPress": "/SAPAssetManager/Actions/Page/CancelPage.action"
+        }]
+	},
+	 "Controls": [
+        {
+            "Sections": [
+                {
+                    "Controls": [
+                        {
+                            "PlaceHolder": "$(L,description)",
+                            "Value": "",
+                            "IsEditable": true,
+                            "IsVisible": true,
+                            "IsAutoResizing": true,
+                            "_Name": "AttachmentDescription",
+                            "_Type": "Control.Type.FormCell.Note"
+                        },
+                        {
+                            "_Name": "Attachment",
+                            "_Type": "Control.Type.FormCell.Attachment",
+                            "AttachmentTitle": "$(L,attached_files)",
+                            "AttachmentAddTitle": "$(L,add)",
+                            "AttachmentCancelTitle": "$(L,cancel)",
+                            "AttachmentActionType": ["AddPhoto", "TakePhoto", "SelectFile"],
+                            "AllowedFileTypes": [],
+                            "Value": []
+                        }
+                    ]
+                }
+            ],
+            "_Name": "FormCellContainer",
+            "_Type": "Control.Type.FormCellContainer"
+        }
+    ],
+	"_Type": "Page",
+	"_Name": "DocumentCreate"
+}

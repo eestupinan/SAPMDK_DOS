@@ -1,0 +1,6 @@
+{
+	"CancelCaption": "Cerrar",
+	"Message": "{{#Property:sMsg}}",
+	"Title": "Error",
+	"_Type": "Action.Type.Message"
+}

@@ -1,0 +1,156 @@
+{
+	"ActionBar": {
+		"Items": [
+			{
+				"OnPress": "/SAPAssetManager/Actions/Open_adjuntos.action",
+				"Position": "right",
+				"SystemItem": "Camera",
+				"Text": "Item",
+				"Visible": true
+			}
+		]
+	},
+	"Caption": "Recintos / carga instalada",
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"Caption": "Recinto 1",
+					"Controls": [
+						{
+							"AllowEmptySelection": false,
+							"AllowMultipleSelection": false,
+							"Caption": "Tipo de recinto",
+							"IsEditable": true,
+							"IsPickerDismissedOnSelection": false,
+							"IsSearchCancelledAfterSelection": false,
+							"IsSelectedSectionEnabled": false,
+							"IsVisible": true,
+							"PickerItems": [
+							],
+							"PickerPrompt": "Please select one single item",
+							"_Name": "FormCellListPicker0",
+							"_Type": "Control.Type.FormCell.ListPicker"
+						},
+						{
+							"Caption": "Volumen CO",
+							"IsEditable": true,
+							"IsVisible": true,
+							"_Name": "FormCellSimpleProperty2",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"AllowEmptySelection": false,
+							"AllowMultipleSelection": false,
+							"Caption": "Cantidad de equipos",
+							"IsEditable": true,
+							"IsPickerDismissedOnSelection": false,
+							"IsSearchCancelledAfterSelection": false,
+							"IsSelectedSectionEnabled": false,
+							"IsVisible": true,
+							"OnValueChange": "/test/Actions/Open_Form_6_2a.action",
+							"PickerItems": [
+								"1",
+								"2",
+								"3",
+								"4",
+								"5"
+							],
+							"PickerPrompt": "Please select one single item",
+							"_Name": "FormCellListPicker1",
+							"_Type": "Control.Type.FormCell.ListPicker"
+						},
+						{
+							"Caption": "Carga recinto KW",
+							"IsEditable": false,
+							"IsVisible": true,
+							"PlaceHolder": "XX",
+							"_Name": "FormCellSimpleProperty0",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						}
+					],
+					"Visible": true
+				},
+				{
+					"Caption": "Recinto 2",
+					"Controls": [
+						{
+							"AllowEmptySelection": false,
+							"AllowMultipleSelection": false,
+							"Caption": "Tipo de recinto",
+							"IsEditable": true,
+							"IsPickerDismissedOnSelection": false,
+							"IsSearchCancelledAfterSelection": false,
+							"IsSelectedSectionEnabled": false,
+							"IsVisible": true,
+							"PickerItems": [
+							],
+							"PickerPrompt": "Please select one single item",
+							"_Name": "FormCellListPicker2",
+							"_Type": "Control.Type.FormCell.ListPicker"
+						},
+						{
+							"Caption": "Volumen CO",
+							"IsEditable": true,
+							"IsVisible": true,
+							"_Name": "FormCellSimpleProperty3",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"AllowEmptySelection": false,
+							"AllowMultipleSelection": false,
+							"Caption": "Cantidad de equipos",
+							"IsEditable": true,
+							"IsPickerDismissedOnSelection": false,
+							"IsSearchCancelledAfterSelection": false,
+							"IsSelectedSectionEnabled": false,
+							"IsVisible": true,
+							"PickerItems": [
+							],
+							"PickerPrompt": "Please select one single item",
+							"_Name": "FormCellListPicker3",
+							"_Type": "Control.Type.FormCell.ListPicker"
+						},
+						{
+							"Caption": "Carga recinto KW",
+							"IsEditable": false,
+							"IsVisible": true,
+							"PlaceHolder": "XX",
+							"_Name": "FormCellSimpleProperty1",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						}
+					],
+					"Visible": true
+				}
+			],
+			"_Name": "FormCellContainer0",
+			"_Type": "Control.Type.FormCellContainer"
+		},
+		{
+			"Sections": [
+				{
+					"Controls": [
+					],
+					"Visible": true
+				}
+			],
+			"_Name": "FormCellContainer1",
+			"_Type": "Control.Type.FormCellContainer"
+		}
+	],
+	"ToolBar": {
+		"Controls": [
+			{
+				"Caption": "Siguente",
+				"Clickable": true,
+				"Enabled": true,
+				"OnPress": "/SAPAssetManager/Actions/vanti/Open_Form_6_2a.action",
+				"Visible": true,
+				"_Name": "ToolbarItem0",
+				"_Type": "Control.Type.ToolbarItem"
+			}
+		]
+	},
+	"_Name": "pageTestForm6",
+	"_Type": "Page"
+}

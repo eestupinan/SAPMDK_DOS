@@ -1,0 +1,20 @@
+{
+    "_Type": "Action.Type.ODataService.CreateEntity",
+    "Target": {
+        "EntitySet": "MaterialDocuments",
+        "Service": "/SAPAssetManager/Services/AssetManager.service"
+    },
+    "Properties": {
+        "DocumentDate": "/SAPAssetManager/Rules/Parts/Issue/Header/PartIssueHeaderDocumentDate.js",
+        "MaterialDocYear": "/SAPAssetManager/Rules/Parts/Issue/Header/PartIssueHeaderMaterialDocYear.js",
+        "PostingDate": "/SAPAssetManager/Rules/Parts/Issue/Header/PartIssueHeaderPostingDate.js",
+        "GMCode": "/SAPAssetManager/Rules/Parts/Issue/Header/PartIssueHeaderGMCode.js",
+        "UserName": "/SAPAssetManager/Rules/Parts/Issue/Header/PartIssueHeaderUserName.js"
+    },
+    "Headers": {
+        "OfflineOData.RemoveAfterUpload": "true"
+    },
+    "OnSuccess": "/SAPAssetManager/Actions/Parts/PartIssueCreateLineItem.action",
+    "OnFailure": "/SAPAssetManager/Actions/CreateUpdateDelete/CreateEntityFailureMessage.action",
+    "ValidationRule": "/SAPAssetManager/Rules/Parts/Issue/CreateUpdate/PartIssueCreateUpdateValidation.js"
+}

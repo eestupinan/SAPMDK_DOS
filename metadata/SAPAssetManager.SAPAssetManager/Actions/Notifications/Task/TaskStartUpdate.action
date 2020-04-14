@@ -1,0 +1,13 @@
+{
+    "Properties": {
+        "ObjectKey": "#Property:ObjectKey",
+        "MobileStatus": "/SAPAssetManager/Rules/MobileStatus/MobileStatusStarted.js",
+        "EffectiveTimestamp": "/SAPAssetManager/Rules/DateTime/CurrentDateTime.js"
+    },
+    "Target": {
+        "EntitySet": "MobileStatuses",
+        "Service": "/SAPAssetManager/Services/AssetManager.service",
+        "ReadLink" : "/SAPAssetManager/Rules/MobileStatus/MobileStatusReadLink.js"
+    },
+    "_Type": "Action.Type.ODataService.UpdateEntity"
+}

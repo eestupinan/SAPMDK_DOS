@@ -1,0 +1,168 @@
+{
+	"ActionBar": {
+		"Items": [
+			{
+				"OnPress": "/SAPAssetManager/Actions/vanti/Open_adjuntos.action",
+				"Position": "right",
+				"SystemItem": "Camera",
+				"Text": "",
+				"Visible": true
+			}
+		]
+	},
+	"Caption": "Inspección centro medición e interna",
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"Controls": [
+						{
+							"Caption": "Presión contratada (bar)",
+							"IsEditable": false,
+							"IsVisible": true,
+							"PlaceHolder": "0,3",
+							"_Name": "FormCellSimpleProperty0",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						}
+					],
+					"Visible": true
+				},
+				{
+					"Caption": "Datos Presion Tomada",
+					"Controls": [
+						{
+							"AllowEmptySelection": false,
+							"AllowMultipleSelection": false,
+							"Caption": "Unidad de medida",
+							"IsEditable": true,
+							"IsPickerDismissedOnSelection": false,
+							"IsSearchCancelledAfterSelection": false,
+							"IsSelectedSectionEnabled": false,
+							"IsVisible": true,
+							"PickerItems": [
+								"PSI",
+								"Mbar",
+								"Col de agua"
+							],
+							"PickerPrompt": "Please select one single item",
+							"_Name": "FormCellListPicker3",
+							"_Type": "Control.Type.FormCell.ListPicker"
+						},
+						{
+							"Caption": "Presión dinámica",
+							"IsEditable": true,
+							"IsVisible": true,
+							"_Name": "FormCellSimpleProperty1",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Presión estática",
+							"IsEditable": true,
+							"IsVisible": true,
+							"_Name": "FormCellSimpleProperty2",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						}
+					],
+					"Visible": true
+				},
+				{
+					"Caption": "Inspección interna",
+					"Controls": [
+						{
+							"AllowEmptySelection": false,
+							"AllowMultipleSelection": false,
+							"Caption": "Defectos",
+							"IsEditable": true,
+							"IsPickerDismissedOnSelection": false,
+							"IsSearchCancelledAfterSelection": false,
+							"IsSelectedSectionEnabled": false,
+							"IsVisible": true,
+							"PickerItems": [
+								"C",
+								"F",
+								"K"
+							],
+							"PickerPrompt": "Please select one single item",
+							"_Name": "FormCellListPicker4",
+							"_Type": "Control.Type.FormCell.ListPicker"
+						},
+						{
+							"Caption": "Nro certificado",
+							"IsEditable": true,
+							"IsVisible": true,
+							"_Name": "FormCellSimpleProperty3",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Vacío interno",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Value": false,
+							"_Name": "FormCellSwitch4",
+							"_Type": "Control.Type.FormCell.Switch"
+						},
+						{
+							"Caption": "Aplica Exep. Norma",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Value": false,
+							"_Name": "FormCellSwitch5",
+							"_Type": "Control.Type.FormCell.Switch"
+						},
+						{
+							"Caption": "Linea Matriz Susp.",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Value": false,
+							"_Name": "FormCellSwitch2",
+							"_Type": "Control.Type.FormCell.Switch"
+						},
+						{
+							"AllowEmptySelection": false,
+							"AllowMultipleSelection": false,
+							"Caption": "Nro de recintos a inspeccionar",
+							"IsEditable": true,
+							"IsPickerDismissedOnSelection": false,
+							"IsSearchCancelledAfterSelection": false,
+							"IsSelectedSectionEnabled": false,
+							"IsVisible": true,
+							"PickerItems": [
+								"1",
+								"2",
+								"3",
+								"4",
+								"5",
+								"6",
+								"7",
+								"8",
+								"9",
+								"10"
+							],
+							"PickerPrompt": "Please select one single item",
+							"_Name": "FormCellListPicker5",
+							"_Type": "Control.Type.FormCell.ListPicker"
+						}
+					],
+					"Visible": true
+				}
+			],
+			"_Name": "FormCellContainer0",
+			"_Type": "Control.Type.FormCellContainer"
+		}
+	],
+	"ToolBar": {
+		"Controls": [
+			{
+				"Caption": "Siguente",
+				"Clickable": true,
+				"Enabled": true,
+				"OnPress": "/SAPAssetManager/Actions/vanti/Open_form_6.action",
+				"Visible": true,
+				"_Name": "ToolbarItem0",
+				"_Type": "Control.Type.ToolbarItem"
+			}
+		]
+	},
+	"_Name": "pageTestForm4",
+	"_Type": "Page"
+}

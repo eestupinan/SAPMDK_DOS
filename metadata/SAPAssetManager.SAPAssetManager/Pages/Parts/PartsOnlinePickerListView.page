@@ -1,0 +1,49 @@
+{
+    "ActionBar": {
+		"Items": [
+		]
+	},
+    "OnLoaded": "/SAPAssetManager/Rules/Parts/CreateUpdate/PartsOnlinePickerListViewOnLoaded.js",
+    "OnReturning": "/SAPAssetManager/Rules/Common/PageCaption/PageCountOnReturn.js",
+
+    "Caption": "$(L,select_material)",
+    "Controls": [
+        {
+            "Sections": [
+                {
+                    "Search": {
+                        "Enabled": true,
+                        "Delay": 500,
+                        "MinimumCharacterThreshold": 3,
+                        "Placeholder": "$(L,search)",
+				        "BarcodeScanner": true
+                    },
+                    "EmptySection": {
+                        "Caption": "$(L,no_parts_available)"
+                    },
+                    "Header": {
+		 		        "UseTopPadding": false
+    		        },
+                    "ObjectCell": {
+                        "Title": "{{#Property:MaterialNum}} - {{#Property:MaterialDesc}}",
+                        "Subhead": "Plant: {{#Property:Plant}}",
+                        "Footnote":"Storage Location: {{#Property:StorageLocation}}",
+                        "OnPress": "/SAPAssetManager/Actions/Parts/NavToPartCreateSummary.action"
+                    },
+                    "Target": {
+                        "EntitySet": "MaterialSLocs",
+                        "Service": "/SAPAssetManager/Services/OnlineAssetManager.service",
+                        "QueryOptions": "/SAPAssetManager/Rules/Parts/CreateUpdate/PartListQueryOptions.js"
+                    },
+                    "_Type": "Section.Type.ObjectTable",
+                    "_Name": "PartsList"
+                }
+            ],
+            "_Type": "Control.Type.SectionedTable",
+            "_Name": "PartsListSectionedTable"
+        }
+    ],
+    "_Type": "Page",
+    "_Name": "PartsOnlinePickerPage",
+    "DataSubscriptions":["MyWorkOrderComponents","MaterialDocuments","MaterialDocItems"]
+}

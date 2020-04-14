@@ -1,0 +1,79 @@
+{
+	"ActionBar": {
+		"Items": [
+			{
+				"OnPress": "/SAPAssetManager/Actions/vanti/Open_adjuntos.action",
+				"Position": "right",
+				"SystemItem": "Camera",
+				"Text": "Item",
+				"Visible": true
+			}
+		]
+	},
+	"Caption": "Datos técnicos",
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"Controls": [
+						{
+							"Caption": "Número de cuotas",
+							"IsEditable": false,
+							"IsVisible": true,
+							"KeyboardType": "Number",
+							"Value": "{NumCuotas}",
+							"_Name": "FormCellSimpleProperty0",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "BP Firma ",
+							"IsEditable": false,
+							"IsVisible": true,
+							"KeyboardType": "Email",
+							"Value": "{BPFirma}",
+							"_Name": "FormCellSimpleProperty1",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Producto de servicio",
+							"IsEditable": false,
+							"IsVisible": true,
+							"KeyboardType": "Default",
+							"Value": "/SAPAssetManager/Rules/vanti/DescServTecnico.js",
+							"_Name": "FormCellSimpleProperty3",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Descripción corta",
+							"IsEditable": false,
+							"IsVisible": true,
+							"KeyboardType": "Default",
+							"Value": "/SAPAssetManager/Rules/vanti/DescServCliente.js",
+							"_Name": "FormCellSimpleProperty4",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						}
+					],
+					"Visible": true
+				}
+			],
+			"_Name": "FormCellContainer0",
+			"_Type": "Control.Type.FormCellContainer"
+		}
+	],
+	"OnReturning": "/SAPAssetManager/Rules/OverviewPage/OverviewOnPageReturning.js",
+	"ToolBar": {
+		"Controls": [
+			{
+				"Caption": "Siguente",
+				"Clickable": true,
+				"Enabled": true,
+				"OnPress": "/SAPAssetManager/Actions/vanti/Open_form_1_overview.action",
+				"Visible": true,
+				"_Name": "ToolbarItem0",
+				"_Type": "Control.Type.ToolbarItem"
+			}
+		]
+	},
+	"_Name": "pageTestForm1_datos_cliente",
+	"_Type": "Page"
+}

@@ -1,0 +1,80 @@
+{
+    "Caption": "$(L,checklist_add)",
+    "OnLoaded": "/SAPAssetManager/Rules/Checklists/Create/CheckListCreateOnLoaded.js",
+    "ActionBar": {
+        "Items": [
+            {
+                "Position": "left",
+                "SystemItem": "Cancel",
+                "OnPress": "/SAPAssetManager/Actions/Page/CancelPage.action"
+            },
+            {
+                "Position": "right",
+                "SystemItem": "Done",
+                "OnPress": "/SAPAssetManager/Actions/Checklists/Create/ChecklistCreateRequired.action"
+            }
+        ]
+    },
+    "Controls": [
+        {
+            "Sections": [
+                {
+                    "Controls": [
+                        {
+                            "_Name": "CategoryLstPkr",
+                            "_Type": "Control.Type.FormCell.ListPicker",
+                            "Caption": "$(L,category)",
+                            "AllowMultipleSelection": false,
+                            "Search": { 
+                                "Enabled": true,
+                                "Delay": 500,
+                                "MinimumCharacterThreshold": 3,
+                                "Placeholder": "$(L,search)",
+								"BarcodeScanner": true
+                            },
+                            "IsEditable": true,
+                            "Value": "",
+                            "OnValueChange": "/SAPAssetManager/Rules/Checklists/Create/ChecklistCreateOnChange.js",
+                            "PickerItems": {
+                                "DisplayValue": "{{#Property:FormCategory}} - {{#Property:FormCategoryDesc}}",
+                                "ReturnValue": "{FormCategory}",
+                                "Target": {
+                                    "EntitySet": "{{#Property:@odata.readLink}}/EquipFormCategories_Nav",
+                                    "Service": "/SAPAssetManager/Services/AssetManager.service",
+                                    "QueryOptions": ""
+                                }
+                            }
+                        },
+                        {
+                            "_Name": "TemplateLstPkr",
+                            "_Type": "Control.Type.FormCell.ListPicker",
+                            "Caption": "$(L,template)",
+                            "AllowMultipleSelection": false,
+                            "Search": { 
+                                "Enabled": true,
+                                "Delay": 500,
+                                "MinimumCharacterThreshold": 3,
+                                "Placeholder": "$(L,search)",
+								"BarcodeScanner": true
+                            },
+                            "IsEditable": true,
+                            "PickerItems": {
+                                "DisplayValue": "{{#Property:TemplateHeader_Nav/#Property:ShortDescription}}",
+                                "ReturnValue": "{TemplateId}",
+                                "Target": {
+                                    "EntitySet": "FormTemplateHeaders",
+                                    "Service": "/SAPAssetManager/Services/AssetManager.service",
+                                    "QueryOptions": "$filter=TemplateId eq ''"
+                                }
+                            }
+                        }
+                    ]
+                }
+            ],
+            "_Name": "FormCellContainer",
+            "_Type": "Control.Type.FormCellContainer"
+        }
+    ],
+    "_Type": "Page",
+    "_Name": "ChecklistCreatePage"
+}

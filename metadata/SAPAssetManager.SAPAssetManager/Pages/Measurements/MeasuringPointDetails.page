@@ -1,0 +1,232 @@
+{
+    "Caption": "$(L,point_details)",
+    "OnLoaded": "/SAPAssetManager/Rules/Measurements/PointDetailsOnPageLoad.js",
+    "ActionBar": {
+        "Items": [
+
+        ]
+    },
+    "Controls": [
+        {
+            "Sections": [
+                {
+                    "Footer": {
+                        "Caption": "$(L,see_all_data)",
+                        "AccessoryType": "disclosureIndicator",
+                        "FooterStyle": "attribute",
+                        "AttributeLabel": "/SAPAssetManager/Rules/Measurements/Document/MeasurementDocsCount.js",
+                        "OnPress": "/SAPAssetManager/Rules/Measurements/Points/MeasuringPointHistoryListViewNav.js"
+                    },
+                    "Module": "extension-Analytics",
+                    "Control": "AnalyticsViewExtension",
+                    "Class": "AnalyticsViewExtension",
+                    "Height": 300,
+                    "ExtensionProperties": {
+                        "BusinessObjects": [
+                            {
+                                "Target": {
+                                    "Property": "MeasurementDocs"
+                                },
+                                "ChartData": {
+                                    "Title": "{PointDesc} ({UoM})",
+                                    "KPIData": {
+
+                                    },
+                                    "entries": {
+                                        "x": "{ReadingDate#format:/SAPAssetManager/Rules/Analytics/AnalyticsSecondsFromUTCFormat.js}",
+                                        "y": "{ReadingValue#format:/SAPAssetManager/Rules/Analytics/AnalyticsReadingValue.js}",
+                                        "label": "{ReadingDate#format:/SAPAssetManager/Rules/Analytics/AnalyticsDateFormat.js}",
+                                        "ChartType": "{IsCounter#format:/SAPAssetManager/Rules/Analytics/ChartType.js}",
+                                        "ValuationCode": "{ValuationCode#format:/SAPAssetManager/Rules/Measurements/ValuationCode.js}",
+                                        "Filter": "{IsCounter#format:/SAPAssetManager/Rules/Analytics/FilterPoints.js}"
+                                    },
+                                    "LineChartDataSet": {
+                                        "PointConfig": {
+                                            "shape": "/SAPAssetManager/Rules/Analytics/AnalyticsShapeConfig.js",
+                                            "color": "/SAPAssetManager/Rules/Analytics/AnalyticsColorConfig.js",
+                                            "size": 5.0
+                                        },
+                                        "SegmentConfig": {
+                                            "colors": "/SAPAssetManager/Rules/Analytics/AnalyticsColorsConfig.js",
+                                            "style": "solid",
+                                            "width": 2.0
+                                        }
+                                    },
+                                    "BarChartDataSet": {
+                                        "BarConfig": {
+                                            "colors": "/SAPAssetManager/Rules/Analytics/AnalyticsColorsConfig.js",
+                                            "width": 0.85
+                                        }
+                                    }
+                                }
+                            }
+                        ],
+                        "ViewConfig": {
+                            "EnableUserInteraction": false,
+                            "ShowInCardView": false,
+                            "NoDataMessage": "$(L, no_data_message)",
+                            "MarginTablet": {
+                                "top": 32,
+                                "bottom": 0,
+                                "left": 24,
+                                "right": 24
+                            },
+                            "MarginPhone": {
+                                "top": 16,
+                                "bottom": 0,
+                                "left": 16,
+                                "right": 16
+                            },
+                            "TitleConfig": {
+                                "title": "",
+                                "color": "333333",
+                                "position": "top",
+                                "margin": {
+                                    "top": 0,
+                                    "bottom": 0,
+                                    "left": 0,
+                                    "right": 0
+                                }
+                            },
+                            "ShowXAxis": true,
+                            "ShowYAxis": true,
+                            "XAxisConfig": {
+                                "style": "/SAPAssetManager/Rules/Analytics/AnalyticsAxisStyleConfig.js",
+                                "color": "/SAPAssetManager/Rules/Analytics/AnalyticsAxisColorConfig.js",
+                                "offset": "/SAPAssetManager/Rules/Analytics/AnalyticsXOffset.js",
+                                "labelColor": "/SAPAssetManager/Rules/Analytics/AnalyticsAxisLabelColorConfig.js",
+                                "labelCount": 4
+                            },
+                            "YAxisConfig": {
+                                "style": "none",
+                                "color": "/SAPAssetManager/Rules/Analytics/AnalyticsAxisColorConfig.js",
+                                "labelColor": "/SAPAssetManager/Rules/Analytics/AnalyticsAxisLabelColorConfig.js",
+                                "offset": "/SAPAssetManager/Rules/Analytics/AnalyticsYOffset.js",
+                                "labelCount":4
+                            }
+                        }
+                    },
+                    "Target": {
+                        "EntitySet": "MeasuringPoints",
+                        "Service": "/SAPAssetManager/Services/AssetManager.service",
+                        "QueryOptions": "/SAPAssetManager/Rules/Measurements/Points/MeasuringPointQuery.js"
+                    },
+                    "OnPress": "/SAPAssetManager/Rules/Measurements/Points/MeasuringPointHistoryListViewNav.js",
+                    "_Type": "Section.Type.Extension",
+                    "DataSubscriptions": [
+                        "MeasurementDocuments"
+                    ]
+                },
+                {
+                    "Header": {
+                        "Caption": "$(L,details)"
+                    },
+                    "KeyAndValues": [
+                        {
+                            "KeyName": "$(L,description)",
+                            "Value": "{PointDesc}"
+                        },
+                        {
+                            "KeyName": "$(L,characteristic)",
+                            "Value": "/SAPAssetManager/Rules/Measurements/Points/MeasuringPointDetailsCharacteristic.js"
+                        },
+                        {
+                            "KeyName": "$(L,lower_limit)",
+                            "Value": "/SAPAssetManager/Rules/Measurements/Points/MeasuringPointDetailsLowerRange.js"
+                        },
+                        {
+                            "KeyName": "$(L,upper_limit)",
+                            "Value": "/SAPAssetManager/Rules/Measurements/Points/MeasuringPointDetailsUpperRange.js"
+                        },
+                        {
+                            "KeyName": "$(L,unit_of_measure)",
+                            "Value": "{UoM}"
+                        }
+                    ],
+                    "_Type": "Section.Type.KeyValue"
+                },
+                {
+                    "Header": {
+                        "Caption": "$(L,current_reading)"
+                    },
+                    "KeyAndValues": [
+                        {
+                            "KeyName": "$(L,reading)",
+                            "Value": "/SAPAssetManager/Rules/Measurements/Points/MeasuringPointDetailsCurrentReading.js"
+                        },
+                        {
+                            "KeyName": "$(L,valuation_code)",
+                            "Value": "/SAPAssetManager/Rules/Measurements/Points/MeasuringPointDetailsCurrentValuation.js"
+                        },
+                        {
+                            "KeyName": "$(L,note)",
+                            "Value": "/SAPAssetManager/Rules/Measurements/Points/MeasuringPointDetailsCurrentShortText.js"
+                        }
+                    ],
+                    "_Type": "Section.Type.KeyValue",
+                    "_Name": "KeyValuePairsCurrent"
+                },
+                {
+                    "Header": {
+                        "Caption": "$(L,previous_reading)"
+                    },
+                    "KeyAndValues": [
+                        {
+                            "KeyName": "$(L,reading)",
+                            "Value": "/SAPAssetManager/Rules/Measurements/Points/MeasuringPointDetailsReading.js"
+                        },
+                        {
+                            "KeyName": "$(L,date)",
+                            "Value": "/SAPAssetManager/Rules/Measurements/Points/MeasuringPointDetailsReadingDate.js"
+                        },
+                        {
+                            "KeyName": "$(L,time)",
+                            "Value": "/SAPAssetManager/Rules/Measurements/Points/MeasuringPointDetailsReadingTime.js"
+                        },
+                        {
+                            "KeyName": "$(L,read_by)",
+                            "Value": "/SAPAssetManager/Rules/Measurements/Points/MeasuringPointDetailsReadBy.js"
+                        },
+                        {
+                            "KeyName": "$(L,valuation_code)",
+                            "Value": "/SAPAssetManager/Rules/Measurements/Points/MeasuringPointDetailsValuation.js"
+                        },
+                        {
+                            "KeyName": "$(L,counter_difference)",
+                            "Value": "/SAPAssetManager/Rules/Measurements/Points/MeasuringPointDetailsDifference.js"
+                        }
+                    ],
+                    "_Type": "Section.Type.KeyValue",
+                    "_Name": "KeyValuePairsPrevious"
+                }
+            ],
+            "_Type": "Control.Type.SectionedTable",
+            "_Name": "SectionedTable"
+        }
+    ],
+    "ToolBar": {
+        "Controls": [
+            {
+                "_Name": "FlexibleSpaceLeftTbI",
+                "_Type": "Control.Type.ToolbarItem",
+                "SystemItem": "FlexibleSpace"
+            },
+            {
+                "_Name": "ReadingTbI",
+                "_Type": "Control.Type.ToolbarItem",
+                "Caption": "$(L,take_reading)",
+                "OnPress": "/SAPAssetManager/Rules/Measurements/Document/MeasurementDocumentCreateNav.js"
+            },
+            {
+                "_Name": "FlexibleSpaceRightTbI",
+                "_Type": "Control.Type.ToolbarItem",
+                "SystemItem": "FlexibleSpace"
+            }
+        ]
+    },
+    "_Type": "Page",
+    "_Name": "MeasuringPointDetailsPage",
+    "DataSubscriptions": [
+        "MeasurementDocuments"
+    ]
+}

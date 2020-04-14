@@ -1,0 +1,34 @@
+{
+  "_Type": "Action.Type.ODataService.CreateEntity",
+  "Target": {
+    "EntitySet": "MyWorkOrderComponents",
+    "Service": "/SAPAssetManager/Services/AssetManager.service"
+  },
+  "Properties": {
+    "OrderId": "#Control:Order/#Value",
+    "ItemNumber":"/SAPAssetManager/Rules/Parts/CreateUpdate/PartLocalItemNumber.js",
+    "OperationNo":"/SAPAssetManager/Rules/Parts/CreateUpdate/PartCreateUpdateSetOperationNo.js",
+    "ItemCategory": "/SAPAssetManager/Rules/Parts/CreateUpdate/PartCreateUpdateSetOdataItemCategory.js",
+    "MaterialNum": "/SAPAssetManager/Rules/Parts/CreateUpdate/PartCreateUpdateSetOdataMaterialNum.js",
+    "Plant": "/SAPAssetManager/Rules/Parts/CreateUpdate/PartCreateUpdateSetOdataPlant.js",
+    "RequirementQuantity": "#Control:QuantitySim/#Value",
+    "UnitOfMeasure": "/SAPAssetManager/Rules/Parts/CreateUpdate/PartCreateUpdateSetOdataUnitOfMeasure.js",
+    "TextTypeDesc": "#Control:TextItemSim/#Value",
+    "ComponentDesc": "/SAPAssetManager/Rules/Parts/CreateUpdate/PartCreateUpdateSetOdataComponentDesc.js",
+    "WithdrawnQuantity": "0",
+    "CommittedQuantity": "0",
+    "OperationDesc": "/SAPAssetManager/Rules/Parts/CreateUpdate/PartCreateUpdateSetOdataOperationDesc.js",
+    "ItemCategoryDesc": "/SAPAssetManager/Rules/Parts/CreateUpdate/PartCreateUpdateSetOdataItemCategoryDesc.js",
+    "StorageLocation": "/SAPAssetManager/Rules/Parts/CreateUpdate/PartCreateUpdateSetOdataStorageLocation.js"
+  },
+  "Headers": {
+    "OfflineOData.RemoveAfterUpload": "true",
+    "OfflineOData.TransactionID":"#Control:Order/#Value"
+  },
+  "CreateLinks": "/SAPAssetManager/Rules/Parts/CreateUpdate/PartCreateUpdateSetOdataCreateLinks.js",
+  "OnSuccess": "/SAPAssetManager/Rules/Parts/PartCreateOnSuccess.js",
+  "OnFailure": "/SAPAssetManager/Actions/CreateUpdateDelete/CreateEntityFailureMessage.action",
+  "ValidationRule": "/SAPAssetManager/Rules/Parts/CreateUpdate/PartCreateUpdateValidation.js",
+  "ShowActivityIndicator": true,
+  "ActivityIndicatorText" : " "
+}

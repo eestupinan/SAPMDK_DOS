@@ -1,0 +1,81 @@
+{
+    "ActionBar": {
+        "Items": [
+            {
+                "Position": "left",
+                "SystemItem": "Cancel",
+                "OnPress": "/SAPAssetManager/Actions/Page/CancelPage.action"
+            },
+            {
+                "Position": "right",
+                "SystemItem": "/SAPAssetManager/Rules/Filter/FilterSystemItem.js",
+                "Text": "/SAPAssetManager/Rules/Filter/FilterText.js",
+                "OnPress": "/SAPAssetManager/Rules/Filter/FilterDone.js"
+            }
+        ]
+    },
+    "Caption":"$(L,filter)",
+    "Result":
+    [
+        "#Page:EquipmentFilterPage/#Control:SortFilter/#Value",
+        "#Page:EquipmentFilterPage/#Control:StatusFilter/#Value"
+    ],
+    "Controls":
+    [{
+        "Sections":
+        [{
+            "Controls":
+            [{
+                "AllowEmptySelection":false,
+                "Caption":"$(L,sort_by)",
+                "SortByItems":
+                [{
+                    "ReturnValue":"EquipId",
+                    "DisplayValue":"$(L,equipment_id)"
+                },
+                {
+                    "ReturnValue":"EquipDesc",
+                    "DisplayValue":"$(L,description)"
+                },
+                {
+                    "ReturnValue":"PlanningPlant",
+                    "DisplayValue":"$(L,plant)"
+                },
+                {
+                    "ReturnValue":"WorkCenter",
+                    "DisplayValue":"$(L,workcenter)"
+                }],
+                "_Name":"SortFilter",
+                "_Type":"Control.Type.FormCell.Sorter",
+                "IsEditable":true
+            }]
+        },
+        {
+            "Controls":
+            [{
+                "AllowMultipleSelection":true,
+                "AllowEmptySelection":true,
+                "Caption":"$(L,mobile_status)",
+                "FilterProperty":"/SAPAssetManager/Rules/Equipment/EquipmentStatus.js",
+                "_Name":"StatusFilter",
+                "_Type":"Control.Type.FormCell.Filter",
+                "IsEditable":true
+            }]
+        },
+        {
+            "Controls": [
+                {
+                    "Title": "$(L,reset_all)",
+                    "OnPress": "/SAPAssetManager/Rules/Filter/FilterReset.js",
+                    "_Type": "Control.Type.FormCell.Button",
+                    "_Name": "ResetButton"
+                }
+            ]
+        }],
+        "_Name":"FormCellContainer",
+        "_Type":"Control.Type.FormCellContainer"
+    }],
+    "_Type":"Page",
+    "_Name":"EquipmentFilterPage",
+    "OnLoaded": "/SAPAssetManager/Rules/Filter/FilterOnLoaded.js"
+}

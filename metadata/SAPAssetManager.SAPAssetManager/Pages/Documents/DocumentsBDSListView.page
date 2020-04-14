@@ -1,0 +1,50 @@
+{
+	"Caption": "$(L,documents)",
+	"ActionBar": 
+	{
+		"Items":
+		[{
+			"Position": "right",
+			"Icon": "res://add",
+			"OnPress": "/SAPAssetManager/Rules/Documents/Create/DocumentCreateBDSNav.js"
+		}]
+	},
+	"Controls":
+	[{
+		"Sections":
+		[{
+			"Header": {
+				"UseTopPadding": false
+			},
+			"EmptySection": {
+				"Caption": "$(L,no_documents_available)"
+			},
+			"ObjectCell":
+			{
+				"PreserveIconStackSpacing": true,
+				"Icons": "/SAPAssetManager/Rules/Documents/DocumentListViewIconImages.js",
+				"ProgressIndicator": "/SAPAssetManager/Rules/Documents/SetIndicatorStateWrapper.js",
+				"DetailImage": "/SAPAssetManager/Rules/Documents/DocumentTypeIcon.js",
+				"DetailImageIsCircular": false,
+				"Title": "/SAPAssetManager/Rules/Documents/DocumentFileName.js",
+				"Subhead": "/SAPAssetManager/Rules/Documents/DocumentDescription.js",
+				"Footnote": "/SAPAssetManager/Rules/Documents/DocumentFileSizeWrapper.js",
+				"OnPress": "/SAPAssetManager/Rules/Documents/DownloadOrOpenDocumentWrapper.js"
+			},
+			"Target":
+			{
+				"EntitySet" : "/SAPAssetManager/Rules/Documents/DocumentsBDSListEntitySet.js",
+				"Service" : "/SAPAssetManager/Services/AssetManager.service",
+				"QueryOptions": "/SAPAssetManager/Rules/Documents/DocumentsBDSQueryOptions.js"
+			},
+			"_Type" : "Section.Type.ObjectTable",
+			"_Name": "DocumentSection"
+		}],
+		"_Type" : "Control.Type.SectionedTable",
+		"_Name": "SectionedTable"
+	}],
+	"_Type": "Page",
+	"OnLoaded": "/SAPAssetManager/Rules/Documents/DocumentListViewOnLoad.js",
+	"OnReturning": "/SAPAssetManager/Rules/Documents/OnBDSListReturning.js",
+	"_Name": "DocumentsListView"
+}

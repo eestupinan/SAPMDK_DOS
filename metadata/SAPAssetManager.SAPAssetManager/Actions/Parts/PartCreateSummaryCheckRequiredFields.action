@@ -1,0 +1,6 @@
+{
+	"_Type": "Action.Type.CheckRequiredFields",
+	"RequiredFields":"/SAPAssetManager/Rules/Parts/PartUpdateRequireFields.js",
+	"OnSuccess":"/SAPAssetManager/Rules/Parts/CreateUpdate/PartCreateUpdateOnCommit.js",
+	"OnFailure":"/SAPAssetManager/Rules/Common/UpdateRequiredFailed.js"
+}

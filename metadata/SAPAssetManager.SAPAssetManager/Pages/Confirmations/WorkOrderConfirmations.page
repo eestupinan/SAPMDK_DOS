@@ -1,0 +1,98 @@
+{
+    "Caption": "/SAPAssetManager/Rules/Confirmations/ListView/ConfirmationsCountTitle.js",
+    "OnReturning": "/SAPAssetManager/Rules/Confirmations/WorkOrderDetails/OnReturning.js",
+    "ActionBar": {
+		"Items": [
+            {
+                "Position": "right",
+                "Icon": "res://add",
+                "OnPress": "/SAPAssetManager/Rules/Confirmations/CreateUpdate/ConfirmationCreateFromWONav.js"
+            }
+        ]
+    },
+    "Controls": [
+        {
+            "Sections": [
+                {
+                    "_Name": "GridTableSection",
+                    "_Type": "Section.Type.GridTable",
+                    "Header": {
+                        "Grid": {
+                            "Items": [
+                                {
+                                    "Text": " "
+                                },
+                                {
+                                    "Text": "$(L,date)"
+                                },
+                                {
+                                    "Text": "$(L,operation)"
+                                },
+                                {
+                                    "Text": "$(L,activity_type)"
+                                },
+                                {
+                                    "Text": "$(L,start_time)"
+                                },
+                                {
+                                    "Text": "$(L,duration)",
+                                    "TextAlignment": "right"
+                                }
+                            ]
+                        }
+					},
+                    "Row": {
+                        "Layout": {
+                            "ColumnWidth": [
+                                15,
+                                -1,
+                                95,
+                                95,
+                                95,
+                                70
+                            ]
+                        },
+                        "Items": [
+                            {
+                                "Image": "/SAPAssetManager/Rules/Confirmations/WorkOrderDetails/ConfirmationSyncImage.js"
+                            },
+                            {
+                                "Text": "/SAPAssetManager/Rules/Confirmations/ListView/ConfirmationDateDetails.js"
+                            },
+                            {
+                                "Text": "/SAPAssetManager/Rules/Confirmations/ListView/ConfirmationOperationDescription.js"
+                            },
+                            {
+                                "Text": "/SAPAssetManager/Rules/Confirmations/ListView/ConfirmationActivityType.js"
+                            },
+                            {
+                                "Text": "/SAPAssetManager/Rules/Confirmations/ListView/ConfirmationStartTimeDetails.js"
+                            },
+                            {
+                                "Text": "/SAPAssetManager/Rules/Confirmations/ListView/ConfirmationFormattedActualDuration.js",
+                                "TextAlignment": "right"
+                            }
+                        ],
+                        "AccessoryType": "disclosureIndicator",
+                        "OnPress": "/SAPAssetManager/Actions/Confirmations/ConfirmationDetailsNav.action"
+                    },
+                    "Footer": {
+                        "AttributeLabel": "/SAPAssetManager/Rules/Confirmations/ConfirmationTotalDuration.js",
+                        "AccessoryType": "none",
+                        "FooterStyle": "attribute"
+                    },
+                    "Target": {
+                        "EntitySet": "Confirmations",
+                        "Service": "/SAPAssetManager/Services/AssetManager.service",
+                        "QueryOptions": "/SAPAssetManager/Rules/Confirmations/ListView/WorkOrderConfirmationsQueryOptions.js"
+                    }
+                }
+            ],
+            "_Type": "Control.Type.SectionedTable",
+            "_Name": "TimeEntriesSection"
+        }
+    ],
+    "_Type": "Page",
+    "_Name": "WorkOrderConfirmations",
+    "DataSubscriptions": ["Confirmations", "ConfirmationOverviewRows"]
+}

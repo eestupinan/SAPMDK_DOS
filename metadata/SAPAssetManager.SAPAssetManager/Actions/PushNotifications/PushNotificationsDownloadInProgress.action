@@ -1,0 +1,6 @@
+{
+    "Message": "$(L,download_progress)",
+    "Duration": 4,
+    "Animated": true,
+    "_Type": "Action.Type.BannerMessage"
+}

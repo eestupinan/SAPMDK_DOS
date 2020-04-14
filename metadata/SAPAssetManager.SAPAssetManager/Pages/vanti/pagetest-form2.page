@@ -1,0 +1,161 @@
+{
+	"ActionBar": {
+		"Items": [
+			{
+				"OnPress": "/SAPAssetManager/Actions/vanti/Open_adjuntos.action",
+				"Position": "right",
+				"SystemItem": "Camera",
+				"Text": "Item",
+				"Visible": true
+			}
+		]
+	},
+	"Caption": "Instalación / Sustitucion",
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"Controls": [
+						{
+							"AllowEmptySelection": false,
+							"AllowMultipleSelection": false,
+							"Caption": "Motivo de Instalación/Sustitución",
+							"IsEditable": "{{#Property:oPages/#Property:pageTestForm2/#Property:lstPickMotivosSustitucion/#Property:editable}}",
+							"IsPickerDismissedOnSelection": false,
+							"IsSearchCancelledAfterSelection": false,
+							"IsSelectedSectionEnabled": false,
+							"IsVisible": "{{#Property:oPages/#Property:pageTestForm2/#Property:lstPickMotivosSustitucion/#Property:visible}}",
+							"PickerItems": "/SAPAssetManager/Rules/vanti/PageForm2getZZMotivosSustituciones.js",
+							"PickerPrompt": "Please select one single item",
+							"_Name": "lstPickMotivosSustitucion",
+							"_Type": "Control.Type.FormCell.ListPicker"
+						},
+						{
+							"AllowEmptySelection": false,
+							"AllowMultipleSelection": false,
+							"Caption": "Destino del medidor",
+							"IsEditable": "{{#Property:oPages/#Property:pageTestForm2/#Property:lstPickDestinosMedidor/#Property:editable}}",
+							"IsPickerDismissedOnSelection": false,
+							"IsSearchCancelledAfterSelection": false,
+							"IsSelectedSectionEnabled": false,
+							"IsVisible": "{{#Property:oPages/#Property:pageTestForm2/#Property:lstPickDestinosMedidor/#Property:visible}}",
+							"PickerItems": {
+								"DisplayValue": "{Descripcion}",
+								"ReturnValue": "{Codigo}",
+								"Target": {
+									"EntitySet": "ZZDestinosMedidores",
+									"Service": "/SAPAssetManager/Services/AssetManager.service"
+								}
+							},
+							"PickerPrompt": "Please select one single item",
+							"_Name": "lstPickDestinosMedidor",
+							"_Type": "Control.Type.FormCell.ListPicker"
+						},
+						{
+							"Caption": "Fecha Laboratorio",
+							"IsEditable": "{{#Property:oPages/#Property:pageTestForm2/#Property:dtPickFecLab/#Property:editable}}",
+							"IsVisible": "{{#Property:oPages/#Property:pageTestForm2/#Property:dtPickFecLab/#Property:visible}}",
+							"Mode": "date",
+							"Value": "Enter Date",
+							"_Name": "dtPickFecLab",
+							"_Type": "Control.Type.FormCell.DatePicker"
+						},
+						{
+							"Caption": "N° Precinto Tula",
+							"IsEditable": "{{#Property:oPages/#Property:pageTestForm2/#Property:txPrecTula/#Property:editable}}",
+							"IsVisible": "{{#Property:oPages/#Property:pageTestForm2/#Property:txPrecTula/#Property:visible}}",
+							"_Name": "txPrecTula",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						}
+					],
+					"Visible": true
+				},
+				{
+					"Caption": "Marque el medidor a sustituir",
+					"Controls": [
+						{
+							"AllowEmptySelection": false,
+							"AllowMultipleSelection": false,
+							"Caption": "Elija uno",
+							"IsEditable": "{{#Property:oPages/#Property:pageTestForm2/#Property:lstPickMedidores/#Property:editable}}",
+							"IsPickerDismissedOnSelection": false,
+							"IsSearchCancelledAfterSelection": false,
+							"IsSelectedSectionEnabled": false,
+							"IsVisible": "{{#Property:oPages/#Property:pageTestForm2/#Property:lstPickMedidores/#Property:visible}}",
+							"PickerItems": {
+								"DisplayValue": "{MaterialDesc}",
+								"ReturnValue": "{Equipment}",
+								"Target": {
+									"EntitySet": "ZZEquipos",
+									"QueryOptions": "$filter=OrderId eq '{{#Property:OrderId}}'",
+									"Service": "/SAPAssetManager/Services/AssetManager.service"
+								}
+							},
+							"PickerPrompt": "Please select one single item",
+							"_Name": "lstPickMedidores",
+							"_Type": "Control.Type.FormCell.ListPicker"
+						}
+					],
+					"Visible": true
+				},
+				{
+					"Caption": "Registre el medidor a Instalar / Sustituir",
+					"Controls": [
+						{
+							"Caption": "Numero de serie",
+							"IsEditable": "{{#Property:oPages/#Property:pageTestForm2/#Property:txtNumSerie/#Property:editable}}",
+							"IsVisible": "{{#Property:oPages/#Property:pageTestForm2/#Property:txtNumSerie/#Property:visible}}",
+							"_Name": "txtNumSerie",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Material",
+							"IsEditable": "{{#Property:oPages/#Property:pageTestForm2/#Property:txtMaterial/#Property:editable}}",
+							"IsVisible": "{{#Property:oPages/#Property:pageTestForm2/#Property:txtMaterial/#Property:visible}}",
+							"_Name": "txtMaterial",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						}
+					],
+					"Visible": true
+				},
+				{
+					"Caption": "Registre las lecturas",
+					"Controls": [
+						{
+							"Caption": "Lectura medidor retirado",
+							"IsEditable": "{{#Property:oPages/#Property:pageTestForm2/#Property:txtLectMedRetirado/#Property:editable}}",
+							"IsVisible": "{{#Property:oPages/#Property:pageTestForm2/#Property:txtLectMedRetirado/#Property:visible}}",
+							"_Name": "txtLectMedRetirado",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Lectura medidor instalado",
+							"IsEditable": "{{#Property:oPages/#Property:pageTestForm2/#Property:txtLectMedInstalado/#Property:editable}}",
+							"IsVisible": "{{#Property:oPages/#Property:pageTestForm2/#Property:txtLectMedInstalado/#Property:visible}}",
+							"_Name": "txtLectMedInstalado",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						}
+					],
+					"Visible": true
+				}
+			],
+			"_Name": "frmContSust",
+			"_Type": "Control.Type.FormCellContainer"
+		}
+	],
+	"ToolBar": {
+		"Controls": [
+			{
+				"Caption": "Siguente",
+				"Clickable": true,
+				"Enabled": true,
+				"OnPress": "/SAPAssetManager/Rules/vanti/PageForm2OnNextPress.js",
+				"Visible": true,
+				"_Name": "ToolbarItem0",
+				"_Type": "Control.Type.ToolbarItem"
+			}
+		]
+	},
+	"_Name": "pageTestForm2",
+	"_Type": "Page"
+}

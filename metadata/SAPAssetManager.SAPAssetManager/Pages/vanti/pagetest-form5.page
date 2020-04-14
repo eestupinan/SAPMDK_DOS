@@ -1,0 +1,97 @@
+{
+	"ActionBar": {
+		"Items": [
+			{
+				"OnPress": "/SAPAssetManager/Actions/vanti/Open_adjuntos.action",
+				"Position": "right",
+				"SystemItem": "Camera",
+				"Text": "Item",
+				"Visible": true
+			}
+		]
+	},
+	"Caption": "Recintos a inspeccionar",
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ContactCells": [
+					],
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"Header": {
+						"Caption": "Recintos a inspeccionar (2)",
+						"UseTopPadding": true
+					},
+					"Visible": true,
+					"_Name": "SectionContactCellTable1",
+					"_Type": "Section.Type.ContactCell"
+				},
+				{
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"ObjectCell": {
+						"AccessoryType": "none",
+						"Description": "N° de equipos  3",
+						"DetailImageIsCircular": false,
+						"Footnote": "Total KW 20",
+						"PreserveIconStackSpacing": true,
+						"ProgressIndicator": "inProgress",
+						"StatusText": "CO ppm 13",
+						"Title": "A_03_cocina"
+					},
+					"Target": {
+						"EntitySet": "Customers",
+						"Service": "/SAPAssetManager/Services/AssetManager.service"
+					},
+					"Visible": true,
+					"_Name": "SectionObjectTable0",
+					"_Type": "Section.Type.ObjectTable"
+				},
+				{
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"ObjectCell": {
+						"AccessoryType": "none",
+						"Description": "N° de equipos  2",
+						"DetailImage": "res://mdk_logo.png",
+						"DetailImageIsCircular": false,
+						"Footnote": "Total KW 16",
+						"PreserveIconStackSpacing": true,
+						"ProgressIndicator": "inProgress",
+						"StatusText": "CO ppm 24",
+						"Subhead": "Subhead",
+						"Title": "A_04_lavandría"
+					},
+					"Target": {
+						"EntitySet": "Customers",
+						"Service": "/SAPAssetManager/Services/AssetManager.service"
+					},
+					"Visible": true,
+					"_Name": "SectionObjectTable3",
+					"_Type": "Section.Type.ObjectTable"
+				}
+			],
+			"_Name": "OverviewPageSectionedTable",
+			"_Type": "Control.Type.SectionedTable"
+		}
+	],
+	"ToolBar": {
+		"Controls": [
+			{
+				"Caption": "Siguente",
+				"Clickable": true,
+				"Enabled": true,
+				"OnPress": "/SAPAssetManager/Actions/vanti/Open_form_6.action",
+				"Visible": true,
+				"_Name": "ToolbarItem0",
+				"_Type": "Control.Type.ToolbarItem"
+			}
+		]
+	},
+	"_Name": "pageTestForm5",
+	"_Type": "Page"
+}

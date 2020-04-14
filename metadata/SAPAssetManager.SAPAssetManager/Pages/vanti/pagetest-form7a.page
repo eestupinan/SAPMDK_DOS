@@ -1,0 +1,723 @@
+{
+	"ActionBar": {
+		"Items": [
+			{
+				"OnPress": "/SAPAssetManager/Actions/Open_adjuntos.action",
+				"Position": "right",
+				"SystemItem": "Camera",
+				"Text": "Item",
+				"Visible": true
+			}
+		]
+	},
+	"Caption": "Precintos residencial y pyme",
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"Controls": [
+						{
+							"Caption": "Serie Actual_Cepo",
+							"IsEditable": true,
+							"IsVisible": "{{#Property:oPages/#Property:pageTestForm7a/#Property:txtSerActCepo/#Property:visible}}",
+							"_Name": "txtSerActCepo",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Estado Actual",
+							"IsEditable": true,
+							"IsVisible": "{{#Property:oPages/#Property:pageTestForm7a/#Property:txtEstActCepo/#Property:visible}}",
+							"_Name": "txtEstActCepo",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Serie Nuevo_Cepo",
+							"IsEditable": true,
+							"IsVisible": "{{#Property:oPages/#Property:pageTestForm7a/#Property:txtSerNewCepo/#Property:visible}}",
+							"_Name": "txtSerNewCepo",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						}
+					],
+					"Visible": true
+				},
+				{
+					"Caption": " ",
+					"Controls": [
+						{
+							"Caption": "Serie Actual_Marco Visor",
+							"IsEditable": true,
+							"IsVisible": "{{#Property:oPages/#Property:pageTestForm7a/#Property:txtSerActVisor/#Property:visible}}",
+							"_Name": "txtSerActVisor",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Estado Actual",
+							"IsEditable": true,
+							"IsVisible": "{{#Property:oPages/#Property:pageTestForm7a/#Property:txtEstActVisor/#Property:visible}}",
+							"_Name": "txtEstActVisor",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Serie Nuevo_Marco Visor",
+							"IsEditable": true,
+							"IsVisible": "{{#Property:oPages/#Property:pageTestForm7a/#Property:txtSerNewVisor/#Property:visible}}",
+							"_Name": "txtSerNewVisor",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						}
+					],
+					"Visible": true
+				},
+				{
+					"Caption": "  ",
+					"Controls": [
+						{
+							"Caption": "Serie Actual_Conector toma presión",
+							"IsEditable": true,
+							"IsVisible": "{{#Property:oPages/#Property:pageTestForm7a/#Property:txtSerActRegulador/#Property:visible}}",
+							"_Name": "txtSerActConector",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Estado Actual",
+							"IsEditable": "{{#Property:oPages/#Property:pageTestForm7a/#Property:txtEstActConector/#Property:visible}}",
+							"IsVisible": "{{#Property:oPages/#Property:pageTestForm7a/#Property:txtEstActRegulador/#Property:visible}}",
+							"_Name": "txtEstActConector",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Serie Nuevo_Conector toma presión",
+							"IsEditable": "{{#Property:oPages/#Property:pageTestForm7a/#Property:txtSerNewRegulador/#Property:visible}}",
+							"IsVisible": "{{#Property:oPages/#Property:pageTestForm7a/#Property:txtSerNewConector/#Property:visible}}",
+							"_Name": "txtSerNewConector",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						}
+					],
+					"Visible": true
+				},
+				{
+					"Caption": "   ",
+					"Controls": [
+						{
+							"Caption": "Serie Actual_Regulador",
+							"IsEditable": true,
+							"IsVisible": "{{#Property:oPages/#Property:pageTestForm7a/#Property:txtSerActConector/#Property:visible}}",
+							"_Name": "txtSerActRegulador",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Estado Actual",
+							"IsEditable": true,
+							"IsVisible": true,
+							"_Name": "txtEstActRegulador",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Serie Nuevo_Regulador",
+							"IsEditable": true,
+							"IsVisible": true,
+							"_Name": "txtSerNewRegulador",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						}
+					],
+					"Visible": true
+				},
+					{
+					"Caption": "   ",
+					"Controls": [
+						{
+							"Caption": "Serie Actual_1",
+							"IsEditable": true,
+							"IsVisible": "{{#Property:oPages/#Property:pageTestForm7a/#Property:txtSerActConector/#Property:visible}}",
+							"_Name": "txtSerActRegulador",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Estado Actual_1",
+							"IsEditable": true,
+							"IsVisible": true,
+							"_Name": "txtEstActRegulador",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Serie Nuevo_Regulador_1",
+							"IsEditable": true,
+							"IsVisible": true,
+							"_Name": "txtSerNewRegulador",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						}
+					],
+					"Visible": true
+				},
+					{
+					"Caption": "   ",
+					"Controls": [
+						{
+							"Caption": "Serie Actual_2",
+							"IsEditable": true,
+							"IsVisible": "{{#Property:oPages/#Property:pageTestForm7a/#Property:txtSerActConector/#Property:visible}}",
+							"_Name": "txtSerActRegulador",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Estado Actual_2",
+							"IsEditable": true,
+							"IsVisible": true,
+							"_Name": "txtEstActRegulador",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Serie Nuevo_Regulador_2",
+							"IsEditable": true,
+							"IsVisible": true,
+							"_Name": "txtSerNewRegulador",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						}
+					],
+					"Visible": true
+				},
+					{
+					"Caption": "   ",
+					"Controls": [
+						{
+							"Caption": "Serie Actual_3",
+							"IsEditable": true,
+							"IsVisible": "{{#Property:oPages/#Property:pageTestForm7a/#Property:txtSerActConector/#Property:visible}}",
+							"_Name": "txtSerActRegulador",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Estado Actual_3",
+							"IsEditable": true,
+							"IsVisible": true,
+							"_Name": "txtEstActRegulador",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Serie Nuevo_Regulador_3",
+							"IsEditable": true,
+							"IsVisible": true,
+							"_Name": "txtSerNewRegulador",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						}
+					],
+					"Visible": true
+				},
+					{
+					"Caption": "   ",
+					"Controls": [
+						{
+							"Caption": "Serie Actual_4",
+							"IsEditable": true,
+							"IsVisible": "{{#Property:oPages/#Property:pageTestForm7a/#Property:txtSerActConector/#Property:visible}}",
+							"_Name": "txtSerActRegulador",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Estado Actual_4",
+							"IsEditable": true,
+							"IsVisible": true,
+							"_Name": "txtEstActRegulador",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Serie Nuevo_Regulador_4",
+							"IsEditable": true,
+							"IsVisible": true,
+							"_Name": "txtSerNewRegulador",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						}
+					],
+					"Visible": true
+				},
+					{
+					"Caption": "   ",
+					"Controls": [
+						{
+							"Caption": "Serie Actual_5",
+							"IsEditable": true,
+							"IsVisible": "{{#Property:oPages/#Property:pageTestForm7a/#Property:txtSerActConector/#Property:visible}}",
+							"_Name": "txtSerActRegulador",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Estado Actual_5",
+							"IsEditable": true,
+							"IsVisible": true,
+							"_Name": "txtEstActRegulador",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Serie Nuevo_Regulador_5",
+							"IsEditable": true,
+							"IsVisible": true,
+							"_Name": "txtSerNewRegulador",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						}
+					],
+					"Visible": true
+				},
+					{
+					"Caption": "   ",
+					"Controls": [
+						{
+							"Caption": "Serie Actual_6",
+							"IsEditable": true,
+							"IsVisible": "{{#Property:oPages/#Property:pageTestForm7a/#Property:txtSerActConector/#Property:visible}}",
+							"_Name": "txtSerActRegulador",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Estado Actual_6",
+							"IsEditable": true,
+							"IsVisible": true,
+							"_Name": "txtEstActRegulador",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Serie Nuevo_Regulador_6",
+							"IsEditable": true,
+							"IsVisible": true,
+							"_Name": "txtSerNewRegulador",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						}
+					],
+					"Visible": true
+				},
+					{
+					"Caption": "   ",
+					"Controls": [
+						{
+							"Caption": "Serie Actual_7",
+							"IsEditable": true,
+							"IsVisible": "{{#Property:oPages/#Property:pageTestForm7a/#Property:txtSerActConector/#Property:visible}}",
+							"_Name": "txtSerActRegulador",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Estado Actual_7",
+							"IsEditable": true,
+							"IsVisible": true,
+							"_Name": "txtEstActRegulador",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Serie Nuevo_Regulador_7",
+							"IsEditable": true,
+							"IsVisible": true,
+							"_Name": "txtSerNewRegulador",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						}
+					],
+					"Visible": true
+				},
+					{
+					"Caption": "   ",
+					"Controls": [
+						{
+							"Caption": "Serie Actual_8",
+							"IsEditable": true,
+							"IsVisible": "{{#Property:oPages/#Property:pageTestForm7a/#Property:txtSerActConector/#Property:visible}}",
+							"_Name": "txtSerActRegulador",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Estado Actual_8",
+							"IsEditable": true,
+							"IsVisible": true,
+							"_Name": "txtEstActRegulador",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Serie Nuevo_Regulador_8",
+							"IsEditable": true,
+							"IsVisible": true,
+							"_Name": "txtSerNewRegulador",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						}
+					],
+					"Visible": true
+				},
+					{
+					"Caption": "   ",
+					"Controls": [
+						{
+							"Caption": "Serie Actual_9",
+							"IsEditable": true,
+							"IsVisible": "{{#Property:oPages/#Property:pageTestForm7a/#Property:txtSerActConector/#Property:visible}}",
+							"_Name": "txtSerActRegulador",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Estado Actual_9",
+							"IsEditable": true,
+							"IsVisible": true,
+							"_Name": "txtEstActRegulador",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Serie Nuevo_Regulador_9",
+							"IsEditable": true,
+							"IsVisible": true,
+							"_Name": "txtSerNewRegulador",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						}
+					],
+					"Visible": true
+				},
+					{
+					"Caption": "   ",
+					"Controls": [
+						{
+							"Caption": "Serie Actual_10",
+							"IsEditable": true,
+							"IsVisible": "{{#Property:oPages/#Property:pageTestForm7a/#Property:txtSerActConector/#Property:visible}}",
+							"_Name": "txtSerActRegulador",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Estado Actual_10",
+							"IsEditable": true,
+							"IsVisible": true,
+							"_Name": "txtEstActRegulador",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Serie Nuevo_Regulador_10",
+							"IsEditable": true,
+							"IsVisible": true,
+							"_Name": "txtSerNewRegulador",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						}
+					],
+					"Visible": true
+				},
+					{
+					"Caption": "   ",
+					"Controls": [
+						{
+							"Caption": "Serie Actual_11",
+							"IsEditable": true,
+							"IsVisible": "{{#Property:oPages/#Property:pageTestForm7a/#Property:txtSerActConector/#Property:visible}}",
+							"_Name": "txtSerActRegulador",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Estado Actual_11",
+							"IsEditable": true,
+							"IsVisible": true,
+							"_Name": "txtEstActRegulador",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Serie Nuevo_Regulador_11",
+							"IsEditable": true,
+							"IsVisible": true,
+							"_Name": "txtSerNewRegulador",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						}
+					],
+					"Visible": true
+				},
+					{
+					"Caption": "   ",
+					"Controls": [
+						{
+							"Caption": "Serie Actual_12",
+							"IsEditable": true,
+							"IsVisible": "{{#Property:oPages/#Property:pageTestForm7a/#Property:txtSerActConector/#Property:visible}}",
+							"_Name": "txtSerActRegulador",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Estado Actual_12",
+							"IsEditable": true,
+							"IsVisible": true,
+							"_Name": "txtEstActRegulador",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Serie Nuevo_Regulador_12",
+							"IsEditable": true,
+							"IsVisible": true,
+							"_Name": "txtSerNewRegulador",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						}
+					],
+					"Visible": true
+				},
+					{
+					"Caption": "   ",
+					"Controls": [
+						{
+							"Caption": "Serie Actual_13",
+							"IsEditable": true,
+							"IsVisible": "{{#Property:oPages/#Property:pageTestForm7a/#Property:txtSerActConector/#Property:visible}}",
+							"_Name": "txtSerActRegulador",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Estado Actual_13",
+							"IsEditable": true,
+							"IsVisible": true,
+							"_Name": "txtEstActRegulador",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Serie Nuevo_Regulador_13",
+							"IsEditable": true,
+							"IsVisible": true,
+							"_Name": "txtSerNewRegulador",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						}
+					],
+					"Visible": true
+				},
+					{
+					"Caption": "   ",
+					"Controls": [
+						{
+							"Caption": "Serie Actual_14",
+							"IsEditable": true,
+							"IsVisible": "{{#Property:oPages/#Property:pageTestForm7a/#Property:txtSerActConector/#Property:visible}}",
+							"_Name": "txtSerActRegulador",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Estado Actual_14",
+							"IsEditable": true,
+							"IsVisible": true,
+							"_Name": "txtEstActRegulador",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Serie Nuevo_Regulador_14",
+							"IsEditable": true,
+							"IsVisible": true,
+							"_Name": "txtSerNewRegulador",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						}
+					],
+					"Visible": true
+				},
+					{
+					"Caption": "   ",
+					"Controls": [
+						{
+							"Caption": "Serie Actual_15",
+							"IsEditable": true,
+							"IsVisible": "{{#Property:oPages/#Property:pageTestForm7a/#Property:txtSerActConector/#Property:visible}}",
+							"_Name": "txtSerActRegulador",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Estado Actual_15",
+							"IsEditable": true,
+							"IsVisible": true,
+							"_Name": "txtEstActRegulador",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Serie Nuevo_Regulador_15",
+							"IsEditable": true,
+							"IsVisible": true,
+							"_Name": "txtSerNewRegulador",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						}
+					],
+					"Visible": true
+				},
+					{
+					"Caption": "   ",
+					"Controls": [
+						{
+							"Caption": "Serie Actual_16",
+							"IsEditable": true,
+							"IsVisible": "{{#Property:oPages/#Property:pageTestForm7a/#Property:txtSerActConector/#Property:visible}}",
+							"_Name": "txtSerActRegulador",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Estado Actual_16",
+							"IsEditable": true,
+							"IsVisible": true,
+							"_Name": "txtEstActRegulador",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Serie Nuevo_Regulador_16",
+							"IsEditable": true,
+							"IsVisible": true,
+							"_Name": "txtSerNewRegulador",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						}
+					],
+					"Visible": true
+				},
+					{
+					"Caption": "   ",
+					"Controls": [
+						{
+							"Caption": "Serie Actual_17",
+							"IsEditable": true,
+							"IsVisible": "{{#Property:oPages/#Property:pageTestForm7a/#Property:txtSerActConector/#Property:visible}}",
+							"_Name": "txtSerActRegulador",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Estado Actual_17",
+							"IsEditable": true,
+							"IsVisible": true,
+							"_Name": "txtEstActRegulador",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Serie Nuevo_Regulador_17",
+							"IsEditable": true,
+							"IsVisible": true,
+							"_Name": "txtSerNewRegulador",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						}
+					],
+					"Visible": true
+				},
+					{
+					"Caption": "   ",
+					"Controls": [
+						{
+							"Caption": "Serie Actual_18",
+							"IsEditable": true,
+							"IsVisible": "{{#Property:oPages/#Property:pageTestForm7a/#Property:txtSerActConector/#Property:visible}}",
+							"_Name": "txtSerActRegulador",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Estado Actual_18",
+							"IsEditable": true,
+							"IsVisible": true,
+							"_Name": "txtEstActRegulador",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Serie Nuevo_Regulador_18",
+							"IsEditable": true,
+							"IsVisible": true,
+							"_Name": "txtSerNewRegulador",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						}
+					],
+					"Visible": true
+				},
+					{
+					"Caption": "   ",
+					"Controls": [
+						{
+							"Caption": "Serie Actual_19",
+							"IsEditable": true,
+							"IsVisible": "{{#Property:oPages/#Property:pageTestForm7a/#Property:txtSerActConector/#Property:visible}}",
+							"_Name": "txtSerActRegulador",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Estado Actual_19",
+							"IsEditable": true,
+							"IsVisible": true,
+							"_Name": "txtEstActRegulador",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Serie Nuevo_Regulador_19",
+							"IsEditable": true,
+							"IsVisible": true,
+							"_Name": "txtSerNewRegulador",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						}
+					],
+					"Visible": true
+				},
+					{
+					"Caption": "   ",
+					"Controls": [
+						{
+							"Caption": "Serie Actual_20",
+							"IsEditable": true,
+							"IsVisible": "{{#Property:oPages/#Property:pageTestForm7a/#Property:txtSerActConector/#Property:visible}}",
+							"_Name": "txtSerActRegulador",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Estado Actual_20",
+							"IsEditable": true,
+							"IsVisible": true,
+							"_Name": "txtEstActRegulador",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Serie Nuevo_Regulador_20",
+							"IsEditable": true,
+							"IsVisible": true,
+							"_Name": "txtSerNewRegulador",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						}
+					],
+					"Visible": true
+				},
+					{
+					"Caption": "   ",
+					"Controls": [
+						{
+							"Caption": "Serie Actual_21",
+							"IsEditable": true,
+							"IsVisible": "{{#Property:oPages/#Property:pageTestForm7a/#Property:txtSerActConector/#Property:visible}}",
+							"_Name": "txtSerActRegulador",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Estado Actual_21",
+							"IsEditable": true,
+							"IsVisible": true,
+							"_Name": "txtEstActRegulador",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Serie Nuevo_Regulador_21",
+							"IsEditable": true,
+							"IsVisible": true,
+							"_Name": "txtSerNewRegulador",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						}
+					],
+					"Visible": true
+				}
+				
+			],
+			"_Name": "FormCellContainer0",
+			"_Type": "Control.Type.FormCellContainer"
+		},
+		{
+			"Sections": [
+				{
+					"Controls": [
+					],
+					"Visible": true
+				}
+			],
+			"_Name": "FormCellContainer1",
+			"_Type": "Control.Type.FormCellContainer"
+		}
+	],
+	"ToolBar": {
+		"Controls": [
+			{
+				"Caption": "Siguente",
+				"Clickable": true,
+				"Enabled": true,
+				"OnPress": "/SAPAssetManager/Actions/vanti/Open_Form_7b.action",
+				"Visible": true,
+				"_Name": "ToolbarItem0",
+				"_Type": "Control.Type.ToolbarItem"
+			}
+		]
+	},
+	"_Name": "pageTestForm7a",
+	"_Type": "Page"
+}

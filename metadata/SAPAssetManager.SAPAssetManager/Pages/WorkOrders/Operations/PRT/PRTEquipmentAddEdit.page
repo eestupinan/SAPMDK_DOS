@@ -1,0 +1,134 @@
+{
+    "Caption": "$(L,add_equipment)",
+    "OnLoaded": "/SAPAssetManager/Rules/WorkOrders/Operations/PRT/CreateUpdate/PRTEquipmentCreateUpdateOnLoaded.js",
+    "ActionBar": {
+        "Items": [
+            {
+                "Position": "left",
+                "SystemItem": "Cancel",
+                "OnPress": "/SAPAssetManager/Actions/Page/CancelPage.action"
+            },
+            {
+                "Position": "right",
+                "SystemItem": "/SAPAssetManager/Rules/Common/Platform/DoneIcon.js",
+                "Text": "/SAPAssetManager/Rules/Common/Platform/DoneText.js",
+                "OnPress": "/SAPAssetManager/Actions/WorkOrders/Operations/PRT/PRTAddEditRequiredField.action"
+            }
+        ]
+    },
+    "Controls": [
+        {
+            "Sections": [
+                {
+                    "Controls": [
+                        {
+                            "_Name": "EquipmentLstPkr",
+                            "_Type": "Control.Type.FormCell.ListPicker",
+                            "AllowMultipleSelection": false,
+                            "Search": { 
+                                "Enabled": true,
+                                "Delay": 500,
+                                "MinimumCharacterThreshold": 3,
+                                "Placeholder": "$(L,search)",
+								"BarcodeScanner": true
+                            },
+                            "IsEditable": "/SAPAssetManager/Rules/Common/IsOnCreate.js",
+                            "Caption": "$(L,equipment)",
+                            "PlaceHolder": "",
+                            "Value": "{Equipment}",
+                            "OnValueChange": "/SAPAssetManager/Rules/WorkOrders/Operations/PRT/CreateUpdate/PRTEquipmentOnChange.js",
+                            "PickerItems": {
+                                "DisplayValue": "{{#Property:EquipId}} - {{#Property:EquipDesc}}",
+                                "ReturnValue": "{EquipId}",
+                                "Target": {
+                                    "EntitySet": "MyEquipments",
+                                    "Service": "/SAPAssetManager/Services/AssetManager.service",
+                                    "QueryOptions": "$filter=PRTFlag eq 'X'&$orderby=EquipId"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "Controls": [
+                        {
+                            "Caption": "$(L,usage)",
+                            "IsVisible": "/SAPAssetManager/Rules/WorkOrders/Operations/PRT/CreateUpdate/IsEditableOrVisible.js",
+                            "IsEditable": "/SAPAssetManager/Rules/WorkOrders/Operations/PRT/CreateUpdate/IsEditableOrVisible.js",
+                            "Value": "{UsageValue}",
+                            "PlaceHolder": "None",
+                            "KeyboardType": "Number",
+                            "_Name": "UsageValueField",
+                            "_Type": "Control.Type.FormCell.SimpleProperty"
+                        },
+                        {
+                            "_Name": "UoMLstPkr",
+                            "_Type": "Control.Type.FormCell.ListPicker",
+                            "Caption": "$(L,unit_of_measure)",
+                            "AllowMultipleSelection": false,
+                            "Search": { 
+                                "Enabled": true,
+                                "Delay": 500,
+                                "MinimumCharacterThreshold": 3,
+                                "Placeholder": "$(L,search)",
+								"BarcodeScanner": true
+                            },
+                            "PickerItems": {
+                                "DisplayValue": "{UoM}",
+                                "ReturnValue": "{UoM}",
+                                "Target": {
+                                    "EntitySet": "UsageUoMs",
+                                    "Service": "/SAPAssetManager/Services/AssetManager.service",
+                                    "QueryOptions": "$orderby=UoM"
+                                }
+                            },
+                            "IsVisible": "/SAPAssetManager/Rules/WorkOrders/Operations/PRT/CreateUpdate/IsEditableOrVisible.js",
+                            "IsEditable": "/SAPAssetManager/Rules/WorkOrders/Operations/PRT/CreateUpdate/IsEditableOrVisible.js",
+                            "Value": "{UsageUOM}"
+                        },
+                        {
+                            "_Name": "ControlKeyLstPkr",
+                            "_Type": "Control.Type.FormCell.ListPicker",
+                            "Caption": "$(L,control_key)",
+                            "AllowMultipleSelection": false,
+                            "Search": { 
+                                "Enabled": true,
+                                "Delay": 500,
+                                "MinimumCharacterThreshold": 3,
+                                "Placeholder": "$(L,search)",
+								"BarcodeScanner": true
+                            },
+                            "PickerItems": {
+                                "DisplayValue": "{PRTControlKeyDesc}",
+                                "ReturnValue": "{PRTControlKey}",
+                                "Target": {
+                                    "EntitySet": "PRTControlKeys",
+                                    "Service": "/SAPAssetManager/Services/AssetManager.service",
+                                    "QueryOptions": "$orderby=PRTControlKeyDesc"
+                                }
+                            },
+                            "IsVisible": "/SAPAssetManager/Rules/WorkOrders/Operations/PRT/CreateUpdate/IsEditableOrVisible.js",
+                            "IsEditable": "/SAPAssetManager/Rules/WorkOrders/Operations/PRT/CreateUpdate/IsEditableOrVisible.js",
+                            "Value": "{ControlKey}"
+                        }
+                    ]
+                },
+                {
+                    "Controls": [
+                        {
+                            "Title": "$(L,discard)",
+                            "OnPress": "/SAPAssetManager/Rules/Common/DiscardAction.js",
+                            "IsVisible": "/SAPAssetManager/Rules/Common/IsDiscardButtonVisible.js",
+                            "_Type": "Control.Type.FormCell.Button",
+                            "_Name": "DiscardButton"
+                        }
+                    ]
+                }
+            ],
+            "_Name": "FormCellContainer",
+            "_Type": "Control.Type.FormCellContainer"
+        }
+    ],
+    "_Type": "Page",
+    "_Name": "PRTCreateUpdatePage"
+}

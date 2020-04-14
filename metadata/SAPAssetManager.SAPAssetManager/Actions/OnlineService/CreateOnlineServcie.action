@@ -1,0 +1,10 @@
+{
+	"OnFailure": "/SAPAssetManager/Rules/OnlineService/OnlineServiceResult.js",
+	"OnSuccess": "/SAPAssetManager/Rules/OnlineService/OnlineServiceResult.js",
+	"Service": "/SAPAssetManager/Services/OnlineAssetManager.service",
+	"ShowActivityIndicator": true,
+	"_Type": "Action.Type.ODataService.Create",
+	"ActionResult": {
+		"_Name": "result"
+	}
+}

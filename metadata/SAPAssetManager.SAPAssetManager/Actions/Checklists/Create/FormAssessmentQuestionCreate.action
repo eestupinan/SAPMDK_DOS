@@ -1,0 +1,29 @@
+{
+	"_Type": "Action.Type.ODataService.CreateEntity",
+	"Target":
+	{
+		"EntitySet" : "FormAssessmentQuestions",
+		"Service" : "/SAPAssetManager/Services/AssetManager.service"
+	},
+	"Properties":
+	{
+        "AssessmentId" : "/SAPAssetManager/Rules/Checklists/Create/ObjectFormAssessmentAssessmentId.js",
+        "QuestionId" : "/SAPAssetManager/Rules/Checklists/Create/FormAssessmentQuestionQuestionId.js",
+        "GroupId" : "/SAPAssetManager/Rules/Checklists/Create/FormAssessmentQuestionGroupId.js",
+        "DisplayId" : "/SAPAssetManager/Rules/Checklists/Create/FormAssessmentQuestionDisplayId.js",
+        "AnswerId" : "/SAPAssetManager/Rules/Checklists/Create/FormAssessmentQuestionAnswerId.js",
+        "SortNumber": "/SAPAssetManager/Rules/Checklists/Create/FormAssessmentQuestionSortNumber.js",
+        "SelectedAnswerOptionId" : "",
+        "Status" : "",
+        "Version" : ""
+	},
+    "Headers":
+	{
+        "OfflineOData.TransactionID": "/SAPAssetManager/Rules/Checklists/Create/FormAssessmentQuestionGroupId.js"
+    },
+    "CreateLinks": "/SAPAssetManager/Rules/Checklists/Create/FormAssessmentQuestionCreateLinks.js",
+    "OnFailure": "/SAPAssetManager/Actions/CreateUpdateDelete/CreateEntityFailureMessage.action",
+    "OnSuccess": "/SAPAssetManager/Rules/Checklists/Create/FormAssessmentQuestionProcessLoop.js",
+    "ShowActivityIndicator": true,
+    "ActivityIndicatorText" : "  "
+}

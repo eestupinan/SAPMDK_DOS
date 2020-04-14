@@ -1,0 +1,22 @@
+{
+    "Properties": {
+        "OrderNumber": "/SAPAssetManager/Rules/Parts/Issue/CreateUpdate/PartIssueUpdateOrderNumber.js",
+        "MovementType": "/SAPAssetManager/Rules/Parts/Issue/CreateUpdate/PartIssueUpdateMovementType.js",
+        "ReservationNumber": "/SAPAssetManager/Rules/Parts/Issue/CreateUpdate/PartIssueUpdateReservationNumber.js",
+        "ReservationItemNumber": "/SAPAssetManager/Rules/Parts/Issue/CreateUpdate/PartIssueUpdateReservationItemNumber.js",
+        "Material": "/SAPAssetManager/Rules/Parts/Issue/CreateUpdate/PartIssueUpdateMaterial.js",
+        "Plant": "/SAPAssetManager/Rules/Parts/Issue/CreateUpdate/PartIssueUpdatePlant.js",
+        "StorageLocation": "/SAPAssetManager/Rules/Parts/Issue/CreateUpdate/PartIssueUpdateStorageLocation.js",
+        "EntryQuantity": "#Control:QuantitySim/#Value",
+        "EntryUOM": "/SAPAssetManager/Rules/Parts/Issue/CreateUpdate/PartIssueUpdateEntryUOM.js"
+    },
+    "Target": {
+        "EntitySet": "MaterialDocItems",
+        "Service": "/SAPAssetManager/Services/AssetManager.service",
+        "ReadLink" : "/SAPAssetManager/Rules/Parts/Issue/CreateUpdate/PartIssueUpdateReadLink.js"
+    },
+    "_Type": "Action.Type.ODataService.UpdateEntity",
+    "OnSuccess": "/SAPAssetManager/Actions/CreateUpdateDelete/UpdateEntitySuccessMessage.action",
+    "OnFailure": "/SAPAssetManager/Actions/CreateUpdateDelete/UpdateEntityFailureMessage.action",
+    "ValidationRule": "/SAPAssetManager/Rules/Parts/Issue/CreateUpdate/PartIssueCreateUpdateValidation.js"
+}

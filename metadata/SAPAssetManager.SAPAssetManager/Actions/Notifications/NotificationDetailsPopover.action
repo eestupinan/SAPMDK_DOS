@@ -1,0 +1,29 @@
+{
+	"PopoverItems": 
+	[{
+		"Title": "$(L,add_item)",
+		"OnPress": "/SAPAssetManager/Rules/Notifications/Item/CreateUpdate/NotificationItemCreateNav.js"
+	},
+	{
+		"Title": "$(L,add_task)",
+		"OnPress": "/SAPAssetManager/Rules/Notifications/Task/CreateUpdate/NotificationTaskCreateNav.js"
+	},
+	{
+		"Title": "$(L,add_activity)",
+		"OnPress": "/SAPAssetManager/Rules/Notifications/Activity/CreateUpdate/NotificationActivityCreateNav.js"
+	},
+	{
+		"Title": "$(L,add_workorder)",
+		"OnPress": "/SAPAssetManager/Rules/WorkOrders/CreateUpdate/WorkOrderCreateFromNotificationNav.js",
+		"Visible": "/SAPAssetManager/Rules/Notifications/Details/NotificationCreateWorkOrderVisible.js"
+	},
+	{
+		"Title" : "/SAPAssetManager/Rules/Notes/NotePopoverSelectionText.js",
+		"OnPress" : "/SAPAssetManager/Rules/Notes/NoteCreateNav.js"
+	},
+	{
+		"Title" : "$(L,add_reminder)",
+		"OnPress" : "/SAPAssetManager/Rules/Reminders/ReminderCreateNav.js"
+	}],
+	"_Type": "Action.Type.PopoverMenu"
+}

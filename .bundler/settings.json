@@ -1,0 +1,13 @@
+{
+	"create-bundle": true,
+	"editor-export": "",
+	"externals": [
+		"file-system",
+		"ui/dialogs",
+		"utils/utils"
+	],
+	"nativescript-project": "../dist",
+	"seam-project": "../metadata/SAPAssetManager.SAPAssetManager",
+	"watch": false,
+	"devtool": "source-map"
+}

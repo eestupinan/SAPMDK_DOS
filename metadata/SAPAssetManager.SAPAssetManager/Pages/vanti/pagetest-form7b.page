@@ -1,0 +1,156 @@
+{
+	"ActionBar": {
+		"Items": [
+			{
+				"OnPress": "/SAPAssetManager/Actions/Open_adjuntos.action",
+				"Position": "right",
+				"SystemItem": "Camera",
+				"Text": "Item",
+				"Visible": true
+			}
+		]
+	},
+	"Caption": "Precintos industria",
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"Controls": [
+						{
+							"Caption": "Serie Actual_Cepo",
+							"IsEditable": true,
+							"IsVisible": true,
+							"_Name": "FormCellSimpleProperty0",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Estado Actual",
+							"IsEditable": true,
+							"IsVisible": true,
+							"_Name": "FormCellSimpleProperty2",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Serie Nuevo_Cepo",
+							"IsEditable": true,
+							"IsVisible": true,
+							"_Name": "FormCellSimpleProperty3",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						}
+					],
+					"Visible": true
+				},
+				{
+					"Caption": " ",
+					"Controls": [
+						{
+							"Caption": "Serie Actual_Marco Visor",
+							"IsEditable": true,
+							"IsVisible": true,
+							"_Name": "FormCellSimpleProperty4",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Estado Actual",
+							"IsEditable": true,
+							"IsVisible": true,
+							"_Name": "FormCellSimpleProperty5",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Serie Nuevo_Marco Visor",
+							"IsEditable": true,
+							"IsVisible": true,
+							"_Name": "FormCellSimpleProperty6",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						}
+					],
+					"Visible": true
+				},
+				{
+					"Caption": "  ",
+					"Controls": [
+						{
+							"Caption": "Serie Actual_Conector toma presión",
+							"IsEditable": true,
+							"IsVisible": true,
+							"_Name": "FormCellSimpleProperty7",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Estado Actual",
+							"IsEditable": true,
+							"IsVisible": true,
+							"_Name": "FormCellSimpleProperty8",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Serie Nuevo_Conector toma presión",
+							"IsEditable": true,
+							"IsVisible": true,
+							"_Name": "FormCellSimpleProperty9",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						}
+					],
+					"Visible": true
+				},
+				{
+					"Caption": "   ",
+					"Controls": [
+						{
+							"Caption": "Serie Actual_Regulador",
+							"IsEditable": true,
+							"IsVisible": true,
+							"_Name": "FormCellSimpleProperty10",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Estado Actual",
+							"IsEditable": true,
+							"IsVisible": true,
+							"_Name": "FormCellSimpleProperty11",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Serie Nuevo_Regulador",
+							"IsEditable": true,
+							"IsVisible": true,
+							"_Name": "FormCellSimpleProperty12",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						}
+					],
+					"Visible": true
+				}
+			],
+			"_Name": "FormCellContainer0",
+			"_Type": "Control.Type.FormCellContainer"
+		},
+		{
+			"Sections": [
+				{
+					"Controls": [
+					],
+					"Visible": true
+				}
+			],
+			"_Name": "FormCellContainer1",
+			"_Type": "Control.Type.FormCellContainer"
+		}
+	],
+	"OnLoaded": "/SAPAssetManager/Rules/vanti/pagetestform7bOnLoad.js",
+	"ToolBar": {
+		"Controls": [
+			{
+				"Caption": "Siguente",
+				"Clickable": true,
+				"Enabled": true,
+				"OnPress": "/SAPAssetManager/Actions/vanti/Open_Operation_Details.action",
+				"Visible": true,
+				"_Name": "ToolbarItem0",
+				"_Type": "Control.Type.ToolbarItem"
+			}
+		]
+	},
+	"_Name": "pageTestForm7b",
+	"_Type": "Page"
+}

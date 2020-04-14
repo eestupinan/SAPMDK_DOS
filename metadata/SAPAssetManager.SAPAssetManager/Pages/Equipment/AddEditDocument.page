@@ -1,0 +1,52 @@
+{
+    "Caption": "/SAPAssetManager/Rules/Equipment/AddEditDocumentCaption.js",
+    "ActionBar": {
+        "Items": [
+            {
+                "Position": "left",
+                "SystemItem": "Cancel",
+                "OnPress": "/SAPAssetManager/Actions/Page/CancelPage.action"
+            },
+            {
+                "Position": "right",
+                "SystemItem": "/SAPAssetManager/Rules/Common/Platform/DoneIcon.js",
+                "Text": "/SAPAssetManager/Rules/Common/Platform/DoneText.js",
+                "OnPress": "/SAPAssetManager/Actions/Equipment/AddEditDocument.action"
+            }
+        ]
+    },
+    "Controls": [
+        {
+            "Sections": [
+                {
+                    "Controls": [
+                        {
+                            "PlaceHolder": "$(L,attachment_description)",
+                            "Value": "",
+                            "_Name": "AttachmentDescription",
+                            "IsAutoResizing": true,
+                            "_Type": "Control.Type.FormCell.Note"
+                        },
+                        {
+                            "_Name": "Attachment",
+                            "_Type": "Control.Type.FormCell.Attachment",
+                            "AttachmentTitle": "$(L,attached_files)",
+                            "AttachmentAddTitle": "$(L,add)",
+                            "AttachmentActionType": [
+                                "AddPhoto",
+                                "TakePhoto",
+                                "SelectFile"
+                            ],
+                            "AllowedFileTypes": [],
+                            "Value": "/SAPAssetManager/Rules/Documents/InitializeAttachments.js"
+                        }
+                    ]
+                }
+            ],
+            "_Name": "FormCellContainer",
+            "_Type": "Control.Type.FormCellContainer"
+        }
+    ],
+    "_Type": "Page",
+    "_Name": "WorkOrderCreateUpdatePage"
+}

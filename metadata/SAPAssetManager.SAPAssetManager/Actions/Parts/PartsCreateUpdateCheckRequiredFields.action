@@ -1,0 +1,9 @@
+{
+	"_Type": "Action.Type.CheckRequiredFields",
+	"RequiredFields":[
+		"PartCategoryLstPkr",
+		"WorkCenterPlantLstPkr"
+	],
+	"OnSuccess":"/SAPAssetManager/Rules/Parts/CreateUpdate/PartOnlineOfflineSearchNav.js",
+	"OnFailure":"/SAPAssetManager/Rules/Common/UpdateRequiredFailed.js"
+}

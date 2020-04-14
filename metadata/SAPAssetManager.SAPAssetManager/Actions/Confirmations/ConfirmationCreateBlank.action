@@ -1,0 +1,20 @@
+{
+    "_Type": "Action.Type.ODataService.CreateEntity",
+    "Target":
+    {
+        "EntitySet" : "Confirmations",
+        "Service" : "/SAPAssetManager/Services/AssetManager.service"
+    },
+    "Properties":
+    {
+        "ConfirmationNum": "/SAPAssetManager/Rules/Confirmations/BlankFinal/GenerateOffsetConfirmationNum.js",
+        "ConfirmationCounter": "/SAPAssetManager/Rules/Confirmations/CreateUpdate/OnCommit/GenerateConfirmationCounter.js",
+        "FinalConfirmation": "#ClientData/#Property:FinalConfirmation",
+        "OrderID": "/SAPAssetManager/Rules/Confirmations/BlankFinal/FinalConfirmationOrderId.js",
+        "Operation": "/SAPAssetManager/Rules/Confirmations/BlankFinal/FinalConfirmationOperation.js",
+        "SubOperation": "/SAPAssetManager/Rules/Confirmations/BlankFinal/FinalConfirmationSubOperation.js"
+    },
+    "Headers": {
+        "OfflineOData.RemoveAfterUpload": "true"
+    }
+}

@@ -1,0 +1,15 @@
+{
+	"Target":
+	{
+		"EntitySet": "ObjectFormAssessments",
+        "Service": "/SAPAssetManager/Services/AssetManager.service",
+        "ReadLink": "{@odata.id}"
+	},
+	"Headers":
+	{
+        "OfflineOData.TransactionID": "#Property:AssessmentId"
+	},
+	"_Type": "Action.Type.ODataService.DeleteEntity",
+	"OnSuccess": "/SAPAssetManager/Actions/Checklists/ChecklistFormDelete.action",
+    "OnFailure": "/SAPAssetManager/Actions/CreateUpdateDelete/DeleteEntityFailureMessage.action"
+}

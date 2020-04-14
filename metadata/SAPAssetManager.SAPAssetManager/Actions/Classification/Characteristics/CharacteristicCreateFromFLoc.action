@@ -1,0 +1,45 @@
+{
+	"_Type": "Action.Type.ODataService.CreateEntity",
+	"Target": {
+		"EntitySet": "/SAPAssetManager/Rules/Classification/Characteristics/Update/CharacteristicsUpdateEntitySet.js",
+		"Service": "/SAPAssetManager/Services/AssetManager.service"
+	},
+	"Properties": {
+		"FuncLocIdIntern": "{{#Page:-Previous/#Property:FuncLocIdIntern}}",
+		"CharValFrom": "/SAPAssetManager/Rules/Classification/Characteristics/Update/CharacteristicUpdateValueFrom.js",
+		"CharValue": "/SAPAssetManager/Rules/Classification/Characteristics/Update/CharacteristicUpdateCharValue.js",
+		"CharValTo": "/SAPAssetManager/Rules/Classification/Characteristics/Update/CharacteristicUpdateValueTo.js",
+		"ValueRel": "/SAPAssetManager/Rules/Classification/Characteristics/Update/CharacteristicUpdateValueRel.js",
+		"CharValDesc":"/SAPAssetManager/Rules/Classification/Characteristics/Update/CharacteristicUpdateCharValueDescription.js",
+		"ObjectKey": "{{#Page:-Previous/#Property:ObjectKey}}",
+		"ObjClassFlag": "{{#Page:-Previous/#Property:ObjClassFlag}}",
+		"ClassType": "{{#Page:-Previous/#Property:ClassType}}",
+		"CharId": "/SAPAssetManager/Rules/Classification/Characteristics/CharId.js",
+		"CharValCounter": "/SAPAssetManager/Rules/Classification/Characteristics/CharValCounter.js"
+	},
+	"Headers": {
+		"OfflineOData.TransactionID": "/SAPAssetManager/Rules/Classification/Characteristics/Update/CharacteristicsUpdateTrasactionId.js",
+		"OfflineOData.RemoveAfterUpload": "true"
+	},
+	"CreateLinks": [
+		{
+			"Property": "Characteristic",
+			"Target": {
+				"EntitySet": "Characteristics",
+				"ReadLink": "{{#Property:Characteristic/#Property:@odata.readLink}}"
+			}
+		},
+		{
+			"Property": "CharValCode_Nav",
+			"Target": {
+				"EntitySet": "CharValueCodes",
+				"ReadLink": "/SAPAssetManager/Rules/Classification/Characteristics/CharacteristicValueCodeReadLink.js"
+			}
+		}
+	],
+	"OnSuccess": "/SAPAssetManager/Rules/Classification/Characteristics/Create/CharacteristicCRUD.js",
+    "OnFailure": "/SAPAssetManager/Rules/Classification/Characteristics/Update/CharacteristicUpdateOnFailure.js",
+	"ValidationRule": "/SAPAssetManager/Rules/Classification/Characteristics/Validation/CharacterisitcsValidation.js",
+	"ShowActivityIndicator": true,
+	"ActivityIndicatorText": "  "
+}

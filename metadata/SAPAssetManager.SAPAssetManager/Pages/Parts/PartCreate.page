@@ -1,0 +1,111 @@
+{
+    "_Type": "Page",
+    "_Name": "PartCreatePage",
+    "OnLoaded": "/SAPAssetManager/Rules/Parts/CreateUpdate/PartCreateUpdateOnPageLoad.js",
+    "OnReturning": "/SAPAssetManager/Rules/Common/PageCaption/PageCountOnReturn.js",
+
+    "ActionBar": {
+        "Items": [
+            {
+                "Position": "left",
+                "SystemItem": "Cancel",
+                "OnPress": "/SAPAssetManager/Rules/Parts/CreateUpdate/PartCreateUpdateCancel.js"
+            },
+            {
+				"OnPress": "/SAPAssetManager/Actions/Parts/PartsCreateUpdateCheckRequiredFields.action",
+				"Position": "right",
+				"Text": "$(L,next)"
+			}
+        ]
+    },
+    "Controls": [
+        {
+            "_Name": "FormCellContainer",
+            "_Type": "Control.Type.FormCellContainer",
+            "Sections": [
+                {
+                    "Caption": "$(L,search_criteria)",
+                    "Controls": [
+                        {
+                            "Caption": "$(L,online_search)",
+                            "_Type": "Control.Type.FormCell.Switch",
+                            "_Name": "OnlineSearchSwitch",
+                            "IsVisible": true,
+                            "IsEditable": "/SAPAssetManager/Rules/Common/CheckForConnectivity.js",
+                            "OnValueChange": "/SAPAssetManager/Rules/Parts/CreateUpdate/SearchCriteriaFieldsVisibility.js"
+                        },
+                        {
+                            "_Name": "PartCategoryLstPkr",
+                            "_Type": "Control.Type.FormCell.ListPicker",
+                            "Caption": "$(L,category)",
+                            "AllowMultipleSelection": false,
+                            "IsEditable": true,
+                            "Value": "/SAPAssetManager/Rules/Parts/CreateUpdate/PartCreateInitialValue.js",
+                            "OnValueChange": "/SAPAssetManager/Rules/Parts/CreateUpdate/PartCreateUpdateOnChange.js",
+                            "PickerItems": "/SAPAssetManager/Rules/Parts/CreateUpdate/PartCreateCategories.js"
+                        },
+                        {
+                            "_Name": "WorkCenterPlantLstPkr",
+                            "_Type": "Control.Type.FormCell.ListPicker",
+                            "Caption": "$(L,work_center_plant)",
+                            "AllowMultipleSelection": false,
+                            "Search": { 
+                                "Enabled": true,
+                                "Delay": 500,
+                                "MinimumCharacterThreshold": 3,
+                                "Placeholder": "$(L,search)",
+				                "BarcodeScanner": false
+                            },
+                            "IsEditable": true,
+                            "Value": "/SAPAssetManager/Rules/Parts/CreateUpdate/PartPlantIntialValue.js",
+                            "OnValueChange": "/SAPAssetManager/Rules/Parts/CreateUpdate/PartCreateUpdateOnChange.js",
+                            "PickerItems": {
+                                "DisplayValue": "{{#Property:Plant}} - {{#Property:PlantDescription}}",
+                                "ReturnValue": "{Plant}",
+                                "Target": {
+                                    "EntitySet": "Plants",
+                                    "Service": "/SAPAssetManager/Services/AssetManager.service",
+                                    "QueryOptions": "$orderby=Plant"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+					"Controls": [
+						{
+                            "AllowMultipleSelection": false,
+                            "Search": { 
+                                "Enabled": true,
+                                "Delay": 500,
+                                "MinimumCharacterThreshold": 3,
+                                "Placeholder": "$(L,search)",
+				                "BarcodeScanner": true
+                            },
+                            "Caption": "$(L,storage_location)",
+                            "PlaceHolder": "",
+                            "PickerItems": "/SAPAssetManager/Rules/Parts/CreateUpdate/PartMaterialStorageLocation.js",
+                            "Value": "{StorageLocation}",
+                            "_Name": "StorageLocationLstPkr",
+                            "_Type": "Control.Type.FormCell.ListPicker"
+                        },
+						{
+							"Caption": "$(L,material_number)",
+                            "PlaceHolder": "$(L, value)",
+							"IsEditable": true,
+							"_Name": "material",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "$(L,material_description)",
+                            "PlaceHolder": "$(L, description)",
+							"IsEditable": true,
+							"_Name": "materialDesc",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						}
+					]
+				}
+            ]
+        }
+    ]
+}

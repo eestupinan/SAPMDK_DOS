@@ -1,0 +1,25 @@
+{
+	"_Type": "Action.Type.ODataService.CreateEntity",
+	"Target":
+	{
+		"EntitySet" : "FormBusObjects",
+		"Service" : "/SAPAssetManager/Services/AssetManager.service"
+	},
+	"Properties":
+	{
+        "AssessmentId" : "/SAPAssetManager/Rules/Checklists/Create/ObjectFormAssessmentAssessmentId.js",
+        "ObjectType" : "EQU",
+        "FormId" : "/SAPAssetManager/Rules/Checklists/Create/FormFormId.js",
+        "TemplateId" : "/SAPAssetManager/Rules/Checklists/Create/FormBusObjectTemplateId.js",
+        "ObjectId" : "/SAPAssetManager/Rules/Checklists/Create/ObjectFormAssessmentObjectId.js"
+	},
+    "Headers":
+	{
+        "OfflineOData.RemoveAfterUpload": "true",
+        "OfflineOData.TransactionID": "/SAPAssetManager/Rules/Checklists/Create/FormFormId.js"
+    },
+    "CreateLinks": "/SAPAssetManager/Rules/Checklists/Create/FormBusObjectsCreateLinks.js",
+    "OnFailure": "/SAPAssetManager/Rules/Checklists/Create/ChecklistChangesetFailureMessage.js",
+    "ShowActivityIndicator": true,
+    "ActivityIndicatorText" : "  "
+}

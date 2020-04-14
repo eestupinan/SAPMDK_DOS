@@ -1,0 +1,21 @@
+{
+    "PopoverItems": [
+        {
+            "Title": "$(L,add_suboperation)",
+            "OnPress": "/SAPAssetManager/Rules/SubOperations/CreateUpdate/SubOperationCreateNav.js"
+        },
+        {
+            "Title": "$(L,add_notification)",
+            "OnPress" : "/SAPAssetManager/Rules/Operations/WorkOrderOperationNotificationCreateNav.js"
+        },
+        {
+            "Title" : "$(L,add_part)",
+            "OnPress" : "/SAPAssetManager/Rules/Parts/CreateUpdate/PartCreateNav.js"
+        },
+        {
+            "Title" : "/SAPAssetManager/Rules/Notes/NotePopoverSelectionText.js",
+            "OnPress": "/SAPAssetManager/Rules/Notes/NoteCreateNav.js"
+        }
+    ],
+    "_Type": "Action.Type.PopoverMenu"
+}

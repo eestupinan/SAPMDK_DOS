@@ -1,0 +1,69 @@
+{
+	"ActionBar": {
+		"Items": [
+			{
+				"Icon": "res://add",
+				"OnPress": "/SAPAssetManager/Rules/Parts/CreateUpdate/PartCreateNav.js",
+				"Position": "right"
+			},
+			{
+				"OnPress": "/SAPAssetManager/Actions/Extensions/BarcodeScannerNav.action",
+				"Position": "right",
+				"Text": "$(L,scan_all)",
+				"Visible": "/SAPAssetManager/Rules/Parts/ScanAllButtonVisibility.js"
+			}
+		]
+	},
+	"Caption": "$(L,parts)",
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"EmptySection": {
+						"Caption": "$(L,no_parts_available)",
+						"FooterVisible": false
+					},
+					"Header": {
+						"UseTopPadding": false
+					},
+					"ObjectCell": {
+						"AccessoryType": "disclosureIndicator",
+						"Description": "/SAPAssetManager/Rules/Parts/PartFieldFormat.js",
+						"Footnote": "{{#Property:OperationDesc}} ({{#Property:OperationNo}})",
+						"Icons": "/SAPAssetManager/Rules/Parts/PartsItemIconImages.js",
+						"OnPress": "/SAPAssetManager/Actions/Parts/PartDetailsNav.action",
+						"PreserveIconStackSpacing": true,
+						"Subhead": "/SAPAssetManager/Rules/Parts/PartFieldFormat.js",
+						"SubstatusText": "/SAPAssetManager/Rules/Parts/PartFieldFormat.js",
+						"Title": "/SAPAssetManager/Rules/Parts/PartFieldFormat.js"
+					},
+					"Search": {
+						"BarcodeScanner": true,
+						"Delay": 500,
+						"Enabled": "/SAPAssetManager/Rules/Parts/PartsSearchEnabled.js",
+						"MinimumCharacterThreshold": 3,
+						"Placeholder": "$(L,search)"
+					},
+					"Target": {
+						"EntitySet": "MyWorkOrderComponents",
+						"QueryOptions": "/SAPAssetManager/Rules/Parts/PartsListQueryOptions.js",
+						"Service": "/SAPAssetManager/Services/AssetManager.service"
+					},
+					"_Name": "PartsList",
+					"_Type": "Section.Type.ObjectTable"
+				}
+			],
+			"_Name": "PartsListSectionedTable",
+			"_Type": "Control.Type.SectionedTable"
+		}
+	],
+	"DataSubscriptions": [
+		"MyWorkOrderComponents",
+		"MaterialDocuments",
+		"MaterialDocItems"
+	],
+	"OnLoaded": "/SAPAssetManager/Rules/Parts/PartsListViewOnLoad.js",
+	"OnReturning": "/SAPAssetManager/Rules/Parts/PartsListOnReturning.js",
+	"_Name": "PartsListViewPage",
+	"_Type": "Page"
+}

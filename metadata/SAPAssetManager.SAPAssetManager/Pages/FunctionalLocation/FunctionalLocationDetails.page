@@ -1,0 +1,364 @@
+{
+    "Caption": "$(L,functional_location)",
+    "ActionBar": {
+        "Items": [
+           
+            {
+                "Position": "right",
+                "SystemItem": "Edit",
+                "OnPress": "/SAPAssetManager/Actions/Equipment/DocumentAddEditNav.action"
+            },
+            {
+                "Position": "right",
+                "Icon": "res://menuicon",
+                "OnPress": "/SAPAssetManager/Actions/FunctionalLocation/FunctionalLocationPopover.action"
+            }
+        ]
+    },
+    "Controls": [
+        {
+            "Sections": [
+                {
+                    "ObjectHeader": {
+                        "HeadlineText": "{{#Property:FuncLocDesc}}",
+                        "BodyText": "{{#Property:FuncLocId}}",
+                        "StatusText": "/SAPAssetManager/Rules/FunctionalLocation/FunctionalLocationStatus.js",
+                        "Target": {
+                            "EntitySet": "{@odata.readLink}",
+                            "Service": "/SAPAssetManager/Services/AssetManager.service"
+                        }
+                    },
+                    "_Type": "Section.Type.ObjectHeader"
+                },
+                {
+                    "Header": {
+                        "Caption": "$(L,location)"
+                    },
+                    "EmptySection": {
+                        "Caption": "$(L,no_location)"
+                    },
+                    "ObjectCells": [
+                        {
+                            "ObjectCell": {
+                                "Title": "/SAPAssetManager/Rules/FunctionalLocation/FunctionalLocationLocationFormat.js",
+                                "Subhead": "/SAPAssetManager/Rules/FunctionalLocation/FunctionalLocationLocationFormat.js",
+                                "AccessoryType": "/SAPAssetManager/Rules/FunctionalLocation/FunctionalLocationLocationFormat.js",
+                                "OnPress": "/SAPAssetManager/Rules/FunctionalLocation/FunctionalLocationMapNav.js",
+                                "PreserveIconStackSpacing": false
+                            }
+                        }
+                    ],
+                    "_Type": "Section.Type.ObjectTable",
+                    "_Name": "FunctionalLocationLocationSection"
+                },
+                {
+                    "Header": {
+                        "Caption": "$(L,functional_location_details)"
+                    },
+                    "KeyAndValues": [
+                        {
+                            "KeyName": "$(L,category)",
+                            "Value": "/SAPAssetManager/Rules/FunctionalLocation/FormatCategory.js"
+                        },
+                        {
+                            "KeyName": "$(L,type)",
+                            "Value": "/SAPAssetManager/Rules/FunctionalLocation/FormatEquipType.js"
+                        },
+                        {
+                            "KeyName": "$(L,model_no)",
+                            "Value": "/SAPAssetManager/Rules/FunctionalLocation/FormatModelNumber.js"
+                        },
+                        {
+                            "KeyName": "$(L,workcenter)",
+                            "Value": "/SAPAssetManager/Rules/FunctionalLocation/FormatWorkCenter.js"
+                        },
+                        {
+                            "KeyName": "$(L,plant)",
+                            "Value": "/SAPAssetManager/Rules/FunctionalLocation/FormatPlanningPlant.js"
+                        },
+                        {
+                            "KeyName": "$(L,location)",
+                            "Value": "/SAPAssetManager/Rules/FunctionalLocation/FormatLocation.js"
+                        },
+                        {
+                            "KeyName": "$(L,room)",
+                            "Value": "/SAPAssetManager/Rules/FunctionalLocation/FormatRoom.js"
+                        },
+                        {
+                            "KeyName": "$(L,section)",
+                            "Value": "/SAPAssetManager/Rules/FunctionalLocation/FormatSection.js"
+                        },
+                        {
+                            "KeyName": "$(L,manufacturer)",
+                            "Value": "/SAPAssetManager/Rules/FunctionalLocation/FormatManufacturer.js"
+                        },
+                        {
+                            "KeyName": "$(L,inventory_no)",
+                            "Value": "/SAPAssetManager/Rules/FunctionalLocation/FormatInventoryNumber.js"
+                        },
+                        {
+                            "KeyName": "$(L,part_no)",
+                            "Value": "/SAPAssetManager/Rules/FunctionalLocation/FormatPartNumber.js"
+                        },
+                        {
+                            "KeyName": "$(L,serial_no)",
+                            "Value": "/SAPAssetManager/Rules/FunctionalLocation/FormatSerialNumber.js"
+                        },
+                        {
+                            "KeyName": "$(L,superior_floc)",
+                            "Value": "/SAPAssetManager/Rules/FunctionalLocation/FormatSuperiorFLOC.js"
+                        }
+                    ],
+                    "_Type": "Section.Type.KeyValue",
+                    "_Name": "KeyValueTable"
+                },
+                {
+                    "Header": {
+                        "Caption": "$(L,measuring_points)"
+                    },
+                    "EmptySection": {
+                        "Caption": "$(L,no_measuring_points_available)"
+                    },
+                    "Footer": {
+                        "Caption": "$(L,see_all_data)",
+                        "AccessoryType": "disclosureIndicator",
+                        "FooterStyle": "attribute",
+                        "AttributeLabel": "/SAPAssetManager/Rules/Measurements/Points/MeasuringPointsCount.js",
+                        "OnPress": "/SAPAssetManager/Actions/Measurements/MeasuringPointsListViewNav.action"
+                    },
+                    "Layout": {
+                        "NumberOfColumns": 3,
+                        "MinimumInteritemSpacing": 12
+                    },
+                    "Extension": {
+                        "Module": "extension-Analytics",
+                        "Control": "AnalyticsViewExtension",
+                        "Class": "AnalyticsViewExtension",
+                        "MaxWidth": "/SAPAssetManager/Rules/Analytics/AnalyticsMaxWidth.js",
+                        "DimensionRatio": "/SAPAssetManager/Rules/Analytics/AnalyticsDimensionRatio.js",
+                        "ExtensionProperties": {
+                            "BusinessObjects": [
+                                {
+                                    "Target": {
+                                        "Property": "MeasuringPoints/MeasurementDocs"
+                                    },
+                                    "ChartData": {
+                                        "Title": "{PointDesc} ({UoM})",
+                                        "KPIData": {
+
+                                        },
+                                        "entries": {
+                                            "x": "{ReadingDate#format:/SAPAssetManager/Rules/Analytics/AnalyticsSecondsFromUTCFormat.js}",
+                                            "y": "{ReadingValue#format:/SAPAssetManager/Rules/Analytics/AnalyticsReadingValue.js}",
+                                            "label": "{ReadingDate#format:/SAPAssetManager/Rules/Analytics/AnalyticsDateFormat.js}",
+                                            "ChartType": "{IsCounter#format:/SAPAssetManager/Rules/Analytics/ChartType.js}",
+                                            "ValuationCode": "{ValuationCode#format:/SAPAssetManager/Rules/Measurements/ValuationCode.js}",
+                                            "Filter": "{IsCounter#format:/SAPAssetManager/Rules/Analytics/FilterPoints.js}"
+                                        },
+                                        "LineChartDataSet": {
+                                            "PointConfig": {
+                                                "shape": "/SAPAssetManager/Rules/Analytics/AnalyticsShapeConfig.js",
+                                                "color": "/SAPAssetManager/Rules/Analytics/AnalyticsColorConfig.js",
+                                                "size": 5.0
+                                            },
+                                            "SegmentConfig": {
+                                                "colors": "/SAPAssetManager/Rules/Analytics/AnalyticsColorsConfig.js",
+                                                "style": "solid",
+                                                "width": 1.0
+                                            }
+                                        },
+                                        "BarChartDataSet": {
+                                            "BarConfig": {
+                                                "colors": "/SAPAssetManager/Rules/Analytics/AnalyticsColorsConfig.js",
+                                                "width": 0.85
+                                            }
+                                        }
+                                    }
+                                }
+                            ],
+                            "ViewConfig": {
+                                "EnableUserInteraction": false,
+                                "ShowInCardView": true,
+                                "NoDataMessage": "$(L, no_data_message)",
+                                "MarginTablet": {
+                                    "top": "/SAPAssetManager/Rules/Analytics/AnalyticsMarginTopAndBottomConfig.js",
+                                    "bottom": "/SAPAssetManager/Rules/Analytics/AnalyticsMarginTopAndBottomConfig.js",
+                                    "left": "/SAPAssetManager/Rules/Analytics/AnalyticsMarginLeftAndRightConfig.js",
+                                    "right": "/SAPAssetManager/Rules/Analytics/AnalyticsMarginLeftAndRightConfig.js"
+                                },
+                                "MarginPhone": {
+                                    "top": "/SAPAssetManager/Rules/Analytics/AnalyticsMarginTopAndBottomConfig.js",
+                                    "bottom": "/SAPAssetManager/Rules/Analytics/AnalyticsMarginTopAndBottomConfig.js",
+                                    "left": "/SAPAssetManager/Rules/Analytics/AnalyticsMarginLeftAndRightConfig.js",
+                                    "right": "/SAPAssetManager/Rules/Analytics/AnalyticsMarginLeftAndRightConfig.js"
+                                },
+                                "TitleConfig": {
+                                    "title": "",
+                                    "position": "/SAPAssetManager/Rules/Analytics/AnalyticsTitlePosition.js",
+                                    "color": "333333",
+                                    "margin": {
+                                        "top": 0.0,
+                                        "bottom": 0.0,
+                                        "left": 0.0,
+                                        "right": 0.0
+                                    }
+                                },
+                                "ShowXAxis": true,
+                                "ShowYAxis": true,
+                                "XAxisConfig": {
+                                    "style": "/SAPAssetManager/Rules/Analytics/AnalyticsAxisStyleConfig.js",
+                                    "color": "/SAPAssetManager/Rules/Analytics/AnalyticsAxisColorConfig.js",
+                                    "offset": 4.0,
+                                    "labelColor": "/SAPAssetManager/Rules/Analytics/AnalyticsAxisLabelColorConfig.js",
+                                    "labelCount": 2
+                                },
+                                "YAxisConfig": {
+                                    "style": "none",
+                                    "color": "/SAPAssetManager/Rules/Analytics/AnalyticsAxisColorConfig.js",
+                                    "labelColor": "/SAPAssetManager/Rules/Analytics/AnalyticsAxisLabelColorConfig.js",
+                                    "offset": 14.0,
+                                    "labelCount": 2
+                                }
+                            }
+                        },
+                        "OnPress": "/SAPAssetManager/Rules/Measurements/Points/MeasuringPointDetailsNav.js"
+                    },
+                    "Target": {
+                        "EntitySet": "{{#Property:@odata.readLink}}/MeasuringPoints",
+                        "Service": "/SAPAssetManager/Services/AssetManager.service",
+                        "QueryOptions": "$top=3&$orderby=SortField&$expand=MeasurementDocs,MeasurementDocs/MeasuringPoint&$select=Point,PointDesc,CharName,UoM,IsCounter,CodeGroup,CatalogType,MeasurementDocs/ReadingDate,MeasurementDocs/ReadingTime,MeasurementDocs/CodeGroup,MeasurementDocs/ValuationCode,MeasurementDocs/CodeShortText,MeasurementDocs/ReadingValue,MeasurementDocs/IsCounterReading,MeasurementDocs/IsCounterReading,MeasurementDocs/CounterReadingDifference,MeasurementDocs/MeasurementDocNum,MeasurementDocs/MeasuringPoint/CharName,MeasurementDocs/MeasuringPoint/IsCounter"
+                    },
+                    "_Type": "Section.Type.ObjectCollection",
+                    "DataSubscriptions": [
+                        "MeasurementDocuments"
+                    ]
+                },
+                {
+                    "Header": {
+                        "Caption": "$(L,equipment)"
+                    },
+                    "EmptySection": {
+                        "Caption": "$(L,no_equipment_available)"
+                    },
+                    "MaxItemCount": 2,
+                    "ObjectCell": {
+                        "AccessoryType": "disclosureIndicator",
+                        "Icons": "/SAPAssetManager/Rules/Common/ListViewIconImages.js",
+                        "Title": "#Property:EquipDesc",
+                        "Subhead": "#Property:EquipId",
+                        "SubstatusText": "#Property:ObjectStatus_Nav/#Property:SystemStatus_Nav/#Property:StatusText",
+                        "Footnote": "",
+                        "OnPress": "/SAPAssetManager/Rules/Equipment/EquipmentDetailsNav.js"
+                    },
+                    "Footer": {
+                        "Caption": "$(L,see_all)",
+                        "AccessoryType": "disclosureIndicator",
+                        "FooterStyle": "attribute",
+                        "AttributeLabel": "/SAPAssetManager/Rules/Equipment/SubEquipment/SubEquipmentCount.js",
+                        "OnPress": "/SAPAssetManager/Actions/Equipment/SubEquipment/SubEquipmentListViewNav.action"
+                    },
+                    "Target": {
+                        "EntitySet": "{{#Property:@odata.readLink}}/Equipments",
+                        "QueryOptions": "$expand=ObjectStatus_Nav/SystemStatus_Nav",
+                        "Service": "/SAPAssetManager/Services/AssetManager.service"
+                    },
+                    "_Type": "Section.Type.ObjectTable",
+                    "_Name": "SubEquipmentSection",
+                    "DataSubscriptions": [
+                        "MyEquipments"
+                    ]
+                },
+                {
+                    "Header": {
+                        "Caption": "$(L,documents)"
+                    },
+                    "EmptySection": {
+                        "Caption": "$(L,no_documents_available)"
+                    },
+                    "MaxItemCount": 2,
+                    "ObjectCell": {
+                        "PreserveIconStackSpacing": true,
+                        "AccessoryType": "disclosureIndicator",
+                        "Icons": "/SAPAssetManager/Rules/Documents/DocumentListViewIconImages.js",
+                        "ProgressIndicator": "/SAPAssetManager/Rules/Documents/SetIndicatorStateWrapper.js",
+                        "DetailImage": "/SAPAssetManager/Rules/Documents/DocumentTypeIcon.js",
+                        "DetailImageIsCircular": false,
+                        "Title": "#Property:Document/#Property:FileName",
+                        "Subhead": "#Property:Document/#Property:Description",
+                        "Footnote": "/SAPAssetManager/Rules/Documents/DocumentFileSizeWrapper.js",
+                        "OnPress": "/SAPAssetManager/Rules/Documents/DownloadOrOpenDocumentWrapper.js"
+                    },
+                    "Footer": {
+                        "Caption": "$(L,see_all)",
+                        "AccessoryType": "disclosureIndicator",
+                        "FooterStyle": "attribute",
+                        "AttributeLabel": "/SAPAssetManager/Rules/Documents/Count/DocumentsBDSCount.js",
+                        "OnPress": "/SAPAssetManager/Actions/Documents/DocumentsBDSListNav.action"
+                    },
+                    "Target": {
+                        "EntitySet": "/SAPAssetManager/Rules/Documents/DocumentsBDSListEntitySet.js",
+                        "QueryOptions": "/SAPAssetManager/Rules/Documents/DocumentsBDSQueryOptions.js",
+                        "Service": "/SAPAssetManager/Services/AssetManager.service"
+                    },
+                    "_Type": "Section.Type.ObjectTable",
+                    "_Name": "DocumentSection",
+                    "DataSubscriptions": [
+                        "Documents"
+                    ]
+                },
+                {
+                    "SimplePropertyCells": [
+                        {
+                            "SimplePropertyCell": {
+                                "AccessoryType": "disclosureIndicator",
+                                "KeyName": "$(L,related_work_orders)",
+                                "Value": "/SAPAssetManager/Rules/FunctionalLocation/FLOCWORelatedHistoriesCount.js",
+                                "OnPress": "/SAPAssetManager/Actions/WorkOrders/WorkOrderRelatedHistoriesListViewNav.action"
+                            }
+                        },
+                        {
+                            "SimplePropertyCell": {
+                                "AccessoryType": "disclosureIndicator",
+                                "KeyName": "$(L,related_notifications)",
+                                "Value": "/SAPAssetManager/Rules/Notifications/RelatedNotifications/RelatedNotificationsCount.js",
+                                "OnPress": "/SAPAssetManager/Actions/Notifications/RelatedNotifications/RelatedNotificationsListViewNav.action"
+                            }
+                        },
+                        {
+                            "SimplePropertyCell": {
+                                "AccessoryType": "disclosureIndicator",
+                                "KeyName": "$(L,business_partners)",
+                                "Value": "/SAPAssetManager/Rules/BusinessPartners/BusinessPartnersCount.js",
+                                "OnPress": "/SAPAssetManager/Actions/BusinessPartners/BusinessPartnersListViewNav.action"
+                            }
+                        },
+                        {
+                            "SimplePropertyCell": {
+                                "AccessoryType": "disclosureIndicator",
+                                "KeyName": "$(L,classifications)",
+                                "Value": "/SAPAssetManager/Rules/Classification/ClassificationCount.js",
+                                "OnPress": "/SAPAssetManager/Actions/Classification/ClassificationListViewNav.action"
+                            }
+                        },
+                        {
+                            "SimplePropertyCell": {
+                                "AccessoryType": "disclosureIndicator",
+                                "KeyName": "$(L,hierarchy)",
+                                "Value": "",
+                                "OnPress": "/SAPAssetManager/Rules/FunctionalLocation/FunctionalLocationHierarchyPageNav.js"
+                            }
+                        }
+                    ],
+                    "Layout": {
+                        "NumberOfColumns": 2,
+                        "MinimumInteritemSpacing": 12
+                    },
+                    "_Type": "Section.Type.SimplePropertyCollection"
+                }
+            ],
+            "_Type": "Control.Type.SectionedTable"
+        }
+    ],
+    "_Type": "Page",
+    "_Name": "FunctionalLocationDetails"
+}

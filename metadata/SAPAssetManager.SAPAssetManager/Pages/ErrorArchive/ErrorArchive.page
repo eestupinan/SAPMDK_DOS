@@ -1,0 +1,38 @@
+{
+	"Caption": "$(L,sync_errors)",
+	"Controls":
+	[{
+		"Sections":
+		[{
+			"Search":
+			{
+				"Enabled" : true,
+				"Delay": 500,
+				"MinimumCharacterThreshold": 3,
+				"Placeholder": "$(L,search)"
+			},
+			"Header": {
+		 		"UseTopPadding": false
+    		},
+			"ObjectCell":
+			{
+        		"AccessoryType": "disclosureIndicator",
+				"Title":  "/SAPAssetManager/Rules/ErrorArchive/ErrorArchiveMessage.js",
+				"Subhead": "{HTTPStatusCode}",
+        		"Description":"{RequestURL}",
+				"OnPress" : "/SAPAssetManager/Rules/ErrorArchive/ErrorArchiveDetailsNav.js",
+				"PreserveIconStackSpacing":false				
+			},
+			"Target":
+			{
+				"EntitySet" : "ErrorArchive",
+				"Service" : "/SAPAssetManager/Services/AssetManager.service",
+				"QueryOptions":""
+			},
+			"_Type" : "Section.Type.ObjectTable"
+		}],
+		"_Type" : "Control.Type.SectionedTable"
+	}],
+	"_Type": "Page",
+	"_Name": "ErrorArchivePage"
+}

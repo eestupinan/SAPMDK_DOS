@@ -1,0 +1,13 @@
+{
+	"_Type": "Action.Type.CheckRequiredFields",
+	"RequiredFields":[
+		"Order",
+		"OperationLstPkr",
+		"PartCategoryLstPkr",
+		"PlantLstPkr",
+		"TextItemSim",
+		"QuantitySim"
+	],
+	"OnSuccess":"/SAPAssetManager/Rules/Parts/CreateUpdate/PartCreateUpdateOnCommit.js",
+	"OnFailure":"/SAPAssetManager/Rules/Common/UpdateRequiredFailed.js"
+}

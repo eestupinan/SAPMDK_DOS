@@ -1,0 +1,5 @@
+{
+	"ClearHistory": true,
+	"PageToOpen": "/SAPAssetManager/Pages/Overview.page",
+	"_Type": "Action.Type.Navigation"
+}

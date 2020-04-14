@@ -1,0 +1,49 @@
+{
+	"Caption": "Adjuntos",
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"Controls": [
+						{
+							"AllowedFileTypes": [
+								"*.mp4"
+							],
+							"AttachmentActionType": [
+								"TakePhoto",
+								"SelectFile"
+							],
+							"AttachmentAddTitle": "$(L,add)",
+							"AttachmentTitle": "$(L,attached_files)",
+							"IsVisible": true,
+							"Styles": {
+								"Background": "FormCellButton"
+							},
+							"Value": "/SAPAssetManager/Rules/Documents/InitializeAttachments.js",
+							"_Name": "Attachment",
+							"_Type": "Control.Type.FormCell.Attachment"
+						}
+					],
+					"Visible": true
+				}
+			],
+			"_Name": "FormCellContainer0",
+			"_Type": "Control.Type.FormCellContainer"
+		}
+	],
+	"ToolBar": {
+		"Controls": [
+			{
+				"Caption": "Volver",
+				"Clickable": true,
+				"Enabled": true,
+				"OnPress": "/SAPAssetManager/Actions/vanti/Open_form_2.action",
+				"Visible": true,
+				"_Name": "ToolbarItem0",
+				"_Type": "Control.Type.ToolbarItem"
+			}
+		]
+	},
+	"_Name": "adjuntos",
+	"_Type": "Page"
+}

@@ -1,0 +1,25 @@
+{
+	"_Type": "Action.Type.ODataService.CreateEntity",
+	"Target":
+	{
+		"EntitySet" : "ObjectFormAssessments",
+		"Service" : "/SAPAssetManager/Services/AssetManager.service"
+	},
+	"Properties":
+	{
+        "AssessmentId" : "/SAPAssetManager/Rules/Checklists/Create/ObjectFormAssessmentAssessmentId.js",
+        "ObjectId" : "/SAPAssetManager/Rules/Checklists/Create/ObjectFormAssessmentObjectId.js",
+        "FormId" : "/SAPAssetManager/Rules/Checklists/Create/ObjectFormAssessmentFormId.js",
+        "EquipId" : "/SAPAssetManager/Rules/Checklists/Create/ObjectFormAssessmentEquipId.js",
+        "FuncLocIdIntern" : "/SAPAssetManager/Rules/Checklists/Create/ObjectFormAssessmentFuncLocIdIntern.js"
+	},
+    "Headers":
+	{
+        "Transaction.Ignore": "true",
+        "OfflineOData.RemoveAfterUpload": "true"
+    },
+    "CreateLinks": "/SAPAssetManager/Rules/Checklists/Create/ObjectFormAssessmentCreateLinks.js",
+    "OnFailure": "/SAPAssetManager/Actions/CreateUpdateDelete/CreateEntityFailureMessage.action",
+    "ShowActivityIndicator": true,
+    "ActivityIndicatorText" : "  "
+}

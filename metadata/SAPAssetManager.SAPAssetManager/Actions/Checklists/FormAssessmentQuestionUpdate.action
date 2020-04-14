@@ -1,0 +1,18 @@
+{
+    "Target":
+    {
+        "EntitySet": "FormAssessmentQuestions",
+        "Service": "/SAPAssetManager/Services/AssetManager.service",
+        "ReadLink": "{@odata.readLink}"
+    },
+    "Properties":
+    {
+        "SelectedAnswerOptionId": "/SAPAssetManager/Rules/Checklists/SelectedAnswerOptionIdForUpdate.js",
+        "Comments": "#Control:Comments/#Value"
+    },
+    "Headers":
+	{
+        "OfflineOData.TransactionID": "{GroupId}"
+    },
+    "_Type": "Action.Type.ODataService.UpdateEntity"
+}

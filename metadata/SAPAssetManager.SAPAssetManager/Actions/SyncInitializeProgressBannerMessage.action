@@ -1,0 +1,7 @@
+{
+    "Message": "$(L,sync_in_progress)",
+    "CompletionMessage": "$(L,sync_success)",
+    "CompletionTimeout": 7,
+    "OnSuccess": "/SAPAssetManager/Rules/ApplicationEvents/ApplicationOnSync.js",
+    "_Type": "Action.Type.ProgressBanner"
+}

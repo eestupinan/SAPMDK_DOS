@@ -1,0 +1,51 @@
+{
+    "Caption": "$(L,error_details)",
+    "ActionBar": {
+        "Items": [
+            {
+                "Position": "right",
+                "Text": "$(L,fix)",
+                "OnPress": "/SAPAssetManager/Rules/ErrorArchive/ErrorArchiveAffectedEntityNav.js"
+            }
+        ]
+    },
+    "Controls": [
+        {
+            "Sections": [
+                {
+                    "Header": {
+                        "Caption": "$(L,details)"
+                    },
+                    "KeyAndValues": [
+                        {
+                            "KeyName": "$(L,error)",
+                            "Value": "/SAPAssetManager/Rules/ErrorArchive/ErrorArchiveDetailsMessage.js"
+                        },
+                        {
+                            "KeyName": "$(L,request_body)",
+                            "Value": "/SAPAssetManager/Rules/ErrorArchive/ErrorArchiveDetailsRequestBody.js"
+                        },
+                        {
+                            "KeyName": "$(L,request_url)",
+                            "Value": "#Property:ErrorObject/#Property:RequestURL"
+                        },
+                        {
+                            "KeyName": "$(L,https_status_code)",
+                            "Value": "#Property:ErrorObject/#Property:HTTPStatusCode"
+                        }
+                    ],
+                    "Layout": {
+                        "NumberOfColumns": 1,
+                        "MinimumInteritemSpacing": 66
+                    },
+                    "_Type": "Section.Type.KeyValue",
+                    "_Name": "Notes"
+                }       
+
+            ],
+            "_Type": "Control.Type.SectionedTable",
+            "_Name": "SectionedTable"
+        }],
+    "_Type": "Page",
+    "_Name": "ErrorArchiveDetailsPage"
+}

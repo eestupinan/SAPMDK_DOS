@@ -1,0 +1,148 @@
+{
+	"ActionBar": {
+		"Items": [
+			{
+				"OnPress": "/SAPAssetManager/Actions/Open_adjuntos.action",
+				"Position": "right",
+				"SystemItem": "Camera",
+				"Text": "Item",
+				"Visible": true
+			}
+		]
+	},
+	"Caption": "Equipos",
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"Caption": "Equipo 1",
+					"Controls": [
+						{
+							"AllowEmptySelection": false,
+							"AllowMultipleSelection": false,
+							"Caption": "Equipo",
+							"IsEditable": true,
+							"IsPickerDismissedOnSelection": false,
+							"IsSearchCancelledAfterSelection": false,
+							"IsSelectedSectionEnabled": false,
+							"IsVisible": true,
+							"PickerItems": [
+							],
+							"PickerPrompt": "Please select one single item",
+							"Search": {
+								"Enabled": true
+							},
+							"_Name": "FormCellListPicker0",
+							"_Type": "Control.Type.FormCell.ListPicker"
+						},
+						{
+							"AllowEmptySelection": false,
+							"AllowMultipleSelection": false,
+							"Caption": "Estado",
+							"IsEditable": true,
+							"IsPickerDismissedOnSelection": false,
+							"IsSearchCancelledAfterSelection": false,
+							"IsSelectedSectionEnabled": false,
+							"IsVisible": true,
+							"OnValueChange": "/test/Actions/Open_Form_6_2a.action",
+							"PickerItems": [
+								"1",
+								"2",
+								"3",
+								"4",
+								"5"
+							],
+							"PickerPrompt": "Please select one single item",
+							"_Name": "FormCellListPicker1",
+							"_Type": "Control.Type.FormCell.ListPicker"
+						},
+						{
+							"Caption": "KW",
+							"IsEditable": true,
+							"IsVisible": true,
+							"PlaceHolder": "XX",
+							"_Name": "FormCellSimpleProperty0",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						}
+					],
+					"Visible": true
+				},
+				{
+					"Caption": "Equipo 2",
+					"Controls": [
+						{
+							"AllowEmptySelection": false,
+							"AllowMultipleSelection": false,
+							"Caption": "Equipo",
+							"IsEditable": true,
+							"IsPickerDismissedOnSelection": false,
+							"IsSearchCancelledAfterSelection": false,
+							"IsSelectedSectionEnabled": false,
+							"IsVisible": true,
+							"PickerItems": [
+							],
+							"PickerPrompt": "Please select one single item",
+							"Search": {
+								"Enabled": true
+							},
+							"_Name": "FormCellListPicker2",
+							"_Type": "Control.Type.FormCell.ListPicker"
+						},
+						{
+							"AllowEmptySelection": false,
+							"AllowMultipleSelection": false,
+							"Caption": "Estado",
+							"IsEditable": true,
+							"IsPickerDismissedOnSelection": false,
+							"IsSearchCancelledAfterSelection": false,
+							"IsSelectedSectionEnabled": false,
+							"IsVisible": true,
+							"PickerItems": [
+							],
+							"PickerPrompt": "Please select one single item",
+							"_Name": "FormCellListPicker3",
+							"_Type": "Control.Type.FormCell.ListPicker"
+						},
+						{
+							"Caption": "KW",
+							"IsEditable": true,
+							"IsVisible": true,
+							"PlaceHolder": "XX",
+							"_Name": "FormCellSimpleProperty1",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						}
+					],
+					"Visible": true
+				}
+			],
+			"_Name": "FormCellContainer0",
+			"_Type": "Control.Type.FormCellContainer"
+		},
+		{
+			"Sections": [
+				{
+					"Controls": [
+					],
+					"Visible": true
+				}
+			],
+			"_Name": "FormCellContainer1",
+			"_Type": "Control.Type.FormCellContainer"
+		}
+	],
+	"ToolBar": {
+		"Controls": [
+			{
+				"Caption": "Siguente",
+				"Clickable": true,
+				"Enabled": true,
+				"OnPress": "/SAPAssetManager/Actions/vanti/Open_Form_7a.action",
+				"Visible": true,
+				"_Name": "ToolbarItem0",
+				"_Type": "Control.Type.ToolbarItem"
+			}
+		]
+	},
+	"_Name": "pageTestForm6_2a",
+	"_Type": "Page"
+}

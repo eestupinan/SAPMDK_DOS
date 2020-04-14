@@ -1,0 +1,29 @@
+{
+  "PopoverItems": 
+	[{
+ 		"Title": "$(L,add_follow_up_workorder)",
+ 		"OnPress" : "/SAPAssetManager/Rules/WorkOrders/FollowUpWorkOrderCreateNav.js"
+ 	},
+	{
+		"Title": "$(L,add_operation)",
+		"OnPress" : "/SAPAssetManager/Rules/WorkOrders/Operations/CreateUpdate/WorkOrderOperationCreateNav.js"
+	},
+	{
+		"Title" : "$(L,add_part)",
+		"OnPress" : "/SAPAssetManager/Rules/Parts/CreateUpdate/PartCreateNav.js"
+	},
+	{
+		"Title" : "/SAPAssetManager/Rules/Notes/NotePopoverSelectionText.js",
+		"OnPress" : "/SAPAssetManager/Rules/Notes/NoteCreateNav.js"
+	},
+	{
+		"Title": "$(L,add_notification)",
+		"OnPress" : "/SAPAssetManager/Rules/WorkOrders/WorkOrderNotificationCreateNav.js"
+	},
+	{
+		"Title" : "$(L,add_reminder)",
+		"OnPress" : "/SAPAssetManager/Rules/Reminders/ReminderCreateNav.js"
+	}
+	],
+	"_Type": "Action.Type.PopoverMenu"
+}
