@@ -600,7 +600,7 @@
 		{
 			"AutomaticallyRetrievesStreams": false,
 			"Name": "ZZPrecintos",
-			"Query": "ZZPrecintoss"
+			"Query": "ZZPrecintos"
 		}
 	],
 	"OnFailure": "/SAPAssetManager/Actions/OData/InitializeOfflineODataCreateFailureMessage.action",
